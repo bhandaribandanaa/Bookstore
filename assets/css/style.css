@@ -1,0 +1,38 @@
+body>.container{
+    display: flex;
+    min-height: 60vh !important;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+   /* label color */
+   .input-field label {
+     color: #e91e63;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus:not([readonly]) + label {
+     color: #e91e63;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus:not([readonly]) {
+     border-bottom: 1px solid #e91e63;
+     box-shadow: 0 1px 0 0 #e91e63;
+   }
+   /* valid color */
+   .input-field input[type=text]:not([readonly]).valid {
+     border-bottom: 1px solid #e91e63;
+     box-shadow: 0 1px 0 0 #e91e63;
+   }
+   /* invalid color */
+   .input-field input[type=text]:not([readonly]).invalid {
+     border-bottom: 1px solid #e91e63;
+     box-shadow: 0 1px 0 0 #e91e63;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #e91e63;
+   }
+        
