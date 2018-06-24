@@ -37,7 +37,7 @@
                 </div>
             </div>
             
-                <form role="form" action=http://localhost/practise/index.php/admin/category_controller/updatebookcategory"/> method="POST">
+                <form role="form" action=http://localhost/interface-bookstore/index.php/admin/category_controller/updatebookcategory"/> method="POST">
                     <div class="form-group">
 
                         <label for="exampleInputEmail1">Category title:</label>

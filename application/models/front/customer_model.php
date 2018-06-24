@@ -42,8 +42,9 @@ class Customer_model extends CI_Model {
             return $data;
         }
 
-        public function change_user($filename){
+        public function change_user(){
             $id=$this->input->post('id');
+            $data['id']= $this->input->post('id');
             $data['fullname']= $this->input->post('fullname');
             $data['address']= $this->input->post('address');
             $data['phone']= $this->input->post('phone');
@@ -54,7 +55,7 @@ class Customer_model extends CI_Model {
             $data['status']= $this->input->post('status');
             $data['token']= $this->input->post('token');
             $data['resetpassword']= $this->input->post('resetpassword');
-            $data['image']= $filename;
+            $data['image']= $this->input->post('image');;
             $this->db->where('id',$id);
             return $this->db->update('customer', $data);
         }
@@ -63,7 +64,7 @@ class Customer_model extends CI_Model {
             $data['records']=$query->row();
             return $data;
         }
-        public function change_userpass($filename){
+        public function change_userpass(){
             $id=$this->input->post('id');
             $data['fullname']= $this->input->post('fullname');
             $data['address']= $this->input->post('address');
@@ -75,6 +76,24 @@ class Customer_model extends CI_Model {
             $data['status']= $this->input->post('status');
             $data['token']= $this->input->post('token');
             $data['resetpassword']= $this->input->post('resetpassword');
+            $data['image']= $this->input->post('image');
+            $this->db->where('id',$id);
+            return $this->db->update('customer', $data);
+        } 
+
+        public function edit_userpicture($id){
+            $query=$this->db->get_where("customer",array('id' => $id));
+            $data['records']=$query->row();
+            return $data;
+        }
+         public function change_userpicture($filename){
+            $id=$this->input->post('id');
+            $data['fullname']= $this->input->post('fullname');
+            $data['address']= $this->input->post('address');
+            $data['phone']= $this->input->post('phone');
+            $data['username']= $this->input->post('username');
+            $data['password']= md5($this->input->post('password'));
+            //$data['role']= $this->input->post('role');
             $data['image']= $filename;
             $this->db->where('id',$id);
             return $this->db->update('customer', $data);

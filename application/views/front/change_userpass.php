@@ -53,7 +53,7 @@
                     </div>  
                     <div class="form-group">
                         <label for="exampleInputEmail1">UserName:</label>
-                        <input type="text" class="form-control" name="username" id="username"  value="<?php echo $records->username;?>" required>
+                        <input type="text" class="form-control" name="username" id="username"  value="<?php echo $records->username;?>" readonly>
                     </div> 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Password:</label>
@@ -65,8 +65,7 @@
                     </div> 
                     <div class="form-group">
 
-                        <label for="exampleInputEmail1"> Image:</label>
-                        <input  type="file" class="form-control" name="image" id="image"  value="<?php echo $records->image;?>" required>
+                        <input  type="hidden" class="form-control" name="image" id="image"  value="<?php echo $records->image;?>" required>
                     </div> 
                     <input type="hidden" name="email" id="email" value="<?php echo $records->email;?>">
                     <input type="hidden" name="resetpassword" id="resetpassword" value="<?php echo $records->resetpassword;?>">

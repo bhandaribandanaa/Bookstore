@@ -39,7 +39,7 @@
    <body>
 
       <center>
-      <form method="POST" action="http://localhost/practise/index.php/admin/category_controller/addbookcategory"/>
+      <form method="POST" action="http://localhost/interface-bookstore/index.php/admin/category_controller/addbookcategory"/>
       <div class="form-group">
                         <label for="exampleInputEmail1">Category title:</label>
                         <input type="text" class="form-control" name=" category_title" id="category_title" required>

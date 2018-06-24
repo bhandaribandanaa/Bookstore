@@ -56,15 +56,14 @@
                     </div>  
                     <div class="form-group">
                         <label for="exampleInputEmail1">UserName:</label>
-                        <input type="text" class="form-control" name="username" id="username"  value="<?php echo $records->username;?>" readonly>
+                        <input type="text" class="form-control" name="username" id="username"  value="<?php echo $records->username;?>" required>
                     </div> 
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Password:</label>
-                        <input type="email" class="form-control" name="email" id="email"  value="<?php echo $records->email;?>" readonly>
+                        <label for="exampleInputEmail1">Email</label>
+                        <input type="email" class="form-control" name="email" id="email"  value="<?php echo $records->email;?>" required>
                     </div> 
                     <div class="form-group">
-                        <label for="exampleInputEmail1"><ELEMENT>Email</ELEMENT>:</label>
-                        <input type="password" class="form-control" name="password" id="password"  value="<?php echo $records->password;?>" readonly>
+                        <input type="hidden" class="form-control" name="password" id="password"  value="<?php echo $records->password;?>" >
                     </div> 
                      <!--<div class="form-group">
                         <label for="exampleInputEmail1"> Confirm Password:</label>
@@ -72,8 +71,7 @@
                     </div> -->
                     
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Image:</label>
-                        <input type="file" class="form-control" name="image" id="image"  value="<?php echo $records->image;?>" required>
+                        <input type="hidden" class="form-control" name="image" id="image"  value="<?php echo $records->image;?>" required>
                     </div> 
                     <input type="hidden" name="resetpassword" id="resetpassword" value="<?php echo $records->resetpassword;?>">
                     <input type="hidden" name="status" id="status" value="<?php echo $records->status;?>">

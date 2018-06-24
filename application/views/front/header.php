@@ -132,9 +132,9 @@ _________________________________________________________ -->
                                     <li class="dropdown active">
                                     <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown">Welcome <?php echo $this->session->userdata('username'); ?> <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="http://localhost/interface-bookstore/front/change_controller/changeuserinfo/?id=<?=$this->session->userdata('id'); ?>">Change User Info</a>
+                                        <li><a href="http://localhost/interface-bookstore/front/customerview_controller/?id=<?=$this->session->userdata('id'); ?>">View Profile</a>
                                         </li>
-                                        <li><a href="http://localhost/interface-bookstore/front/change_controller/changeuserpass/?id=<?= $this->session->userdata('id'); ?>">Change Username/Password</a>
+                                        <li><a href="http://localhost/interface-bookstore/front/change_controller/changeuserpass/?id=<?= $this->session->userdata('id'); ?>">Change Password</a>
                                         </li>
                                         <?php if($this->session->userdata('username')!= NULL){?> 
                                         <li><a href="<?= site_url('front/dashboard/logout') ?>">Logout</a>

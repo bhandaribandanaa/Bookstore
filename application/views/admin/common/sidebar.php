@@ -10,7 +10,7 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">Main</li>
-                        <li><a class="ajax-link" href="http://localhost/practise/admin/dashboard"><i class="glyphicon glyphicon-home"></i><span> Dashboard</span></a>
+                        <li><a class="ajax-link" href="http://localhost/interface-bookstore/admin/dashboard"><i class="glyphicon glyphicon-home"></i><span> Dashboard</span></a>
                         </li>
                        
                         <li class="accordion">

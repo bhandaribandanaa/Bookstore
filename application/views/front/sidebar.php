@@ -12,7 +12,7 @@
                             ?>
                                 <ul class="nav nav-pills nav-stacked category-menu">
                                     <li>
-                                        <a href="http://localhost/practise/front/category_controller/getbookscategory/?cat_id=<?php echo $r->cat_id?>"><?php echo $r->cat_title?></a>
+                                        <a href="http://localhost/interface-bookstore/front/category_controller/getbookscategory/?cat_id=<?php echo $r->cat_id?>"><?php echo $r->cat_title?></a>
                                         <ul>
                                         <?php
                                             $j=1;   
@@ -20,7 +20,7 @@
                                                 if($r->cat_title==$sub->category){
                                                 ?>
                                                     
-                                                    <li><a href="http://localhost/practise/front/category_controller/getbookscategory/?subcat_id=<?php echo $sub->subcat_id?>"><?php echo $sub->subcat_title?></a>
+                                                    <li><a href="http://localhost/interface-bookstore/front/category_controller/getbookscategory/?subcat_id=<?php echo $sub->subcat_id?>"><?php echo $sub->subcat_title?></a>
                                                     </li>
                                                 <?php
                                                 $j++;

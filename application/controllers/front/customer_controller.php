@@ -51,12 +51,11 @@ class Customer_controller extends CI_Controller {
 				$data['user_logged_in'] = TRUE;
 				$data['username'] = $result->username;
 				$data['password']= $result->password;
-				$data['id']= $result->id;
-				
+				$data['id']= $result->id;				
 				$this->session->set_userdata( $data );
 
 				//redirecting to dashboard after succesful login
-				redirect(site_url('front/shop_controller'),'refresh');
+				redirect(site_url('front/customerview_controller/?id='.$data['id']),'refresh');
 				exit();
 			}
 			else

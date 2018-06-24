@@ -8,7 +8,7 @@
 	
    <body>
       <center>
-      <form method="POST" action="http://localhost/practise/index.php/admin_controller/updateuser"/>
+      <form method="POST" action="http://localhost/interface-bookstore/index.php/admin_controller/updateuser"/>
       
       Username:<input type="text" name="username" value="<?php echo $records->username;?>"/><br/><br/>
       Password:<input type="text" name="password" value="<?php echo $records->password;?>"/><br/><br/>

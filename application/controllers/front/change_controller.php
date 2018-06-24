@@ -21,10 +21,11 @@ class change_controller extends CI_Controller{
 	}
 	public function updateuserinfo(){
 		$this->load->model('front/customer_model');
-		  $filename=$this->upload_file();
-          $data=$this->customer_model->change_user($filename);	
+		  //$filename=$this->upload_file();
+          $data=$this->customer_model->change_user();
+          $id=$this->input->post('id');
           if($data){
-			redirect(site_url('front/shop_controller'),'refresh');
+			redirect(site_url('front/customerview_controller/?id='.$id),'refresh');
 		}else{
 			$this->session->set_flashdata('Error Registering', TRUE);
 			redirect(site_url('front/change_controller/changeuserinfo'),'refresh');
@@ -39,7 +40,7 @@ class change_controller extends CI_Controller{
 	}
 	public function updateuserpass(){
 		$this->load->model('front/customer_model');
-		$filename=$this->upload_file();
+		//$filename=$this->upload_file();
 		$this->load->library('form_validation');
 		$id = $this->input->post('id');
 		$query=$this->db->get_where("customer",array('id' => $id));
@@ -59,9 +60,9 @@ class change_controller extends CI_Controller{
 		$this->form_validation->set_rules('passconf', 'Password Confirmation', 'required|matches[password]');
 				if ($this->form_validation->run())
                 {
-						$data= $this->customer_model->change_userpass($filename);
+						$data= $this->customer_model->change_userpass();
 						if($data){
-							redirect(site_url('front/dashboard'),'refresh');
+							redirect(site_url('front/customerview_controller/?id='.$id),'refresh');
 						}else{
 							$this->session->set_flashdata('Error Registering', TRUE);
 							redirect(site_url('front/changeuserpass'),'refresh');
@@ -75,6 +76,31 @@ class change_controller extends CI_Controller{
 
 		
 	}
+
+	//upload picture for customer
+
+	public function changeuserpicture(){
+		$this->load->model('front/customer_model');
+		$id=$this->input->get('id');
+		$data=$this->customer_model->edit_userpicture($id);
+		$this->load->view('front/change_userpicture',$data);
+	}
+
+	public function updateuserpicture(){
+		$this->load->model('front/customer_model');
+		$filename=$this->upload_file();
+		$id = $this->session->userdata('id');
+		$data= $this->customer_model->change_userpicture($filename);
+		if($data){
+			redirect(site_url('front/customerview_controller/?id='.$id),'refresh');
+			}else{
+				$this->session->set_flashdata('Error Registering', TRUE);
+				redirect(site_url('front/change_controller/changeuserpicture/?id='.$id),'refresh');
+				exit();
+			}
+		
+	}
+
 	public function upload_file()
         {
 

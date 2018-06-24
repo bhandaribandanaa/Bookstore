@@ -12,7 +12,7 @@ class admin_controller extends CI_Controller{
 		$this->admin_model->insert_user();
 		$data=$this->load->view('admin_view');
 		if($data){
-			redirect('http://localhost/practise/index.php/admin_controller','refresh');
+			redirect('http://localhost/interface-bookstore/index.php/admin_controller','refresh');
 		}else{
 			echo"error";
 		}

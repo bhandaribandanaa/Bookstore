@@ -86,15 +86,15 @@ _________________________________________________________ -->
                             <div class="col-md-4 col-sm-6">
                                 <div class="product">
                                     <div class="image">
-                                        <a href="http://localhost/practise/front/bookdetail_controller/?id=<?php echo $r->book_id?>">
+                                        <a href="http://localhost/interface-bookstore/front/bookdetail_controller/?id=<?php echo $r->book_id?>">
                                             <img src="<?= site_url('uploads/bookdetail/'.$r->image);?>" alt="<?= site_url('uploads/bookdetail/'.$r->image);?>" height="250" width="200" class="img-responsive image1">
                                         </a>
                                     </div>
                                     <!-- /.image -->
                                     <div class="text">
-                                        <h3><a href="http://localhost/practise/front/bookdetail_controller/?id=<?php echo $r->book_id?>"><?php echo $r->book_title;?></a></h3> 
+                                        <h3><a href="http://localhost/interface-bookstore/front/bookdetail_controller/?id=<?php echo $r->book_id?>"><?php echo $r->book_title;?></a></h3> 
                                         <h5 class="price">By </h5>
-                                        <h3><a href="http://localhost/practise/front/bookdetail_controller/?id=<?php echo $r->book_id?>"> <?php echo $r->book_author;?></a></h3>
+                                        <h3><a href="http://localhost/interface-bookstore/front/bookdetail_controller/?id=<?php echo $r->book_id?>"> <?php echo $r->book_author;?></a></h3>
                                         
                                         <p class="price">NRs. <?php echo $r->price;?></p>
 

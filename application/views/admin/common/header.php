@@ -68,9 +68,9 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="http://localhost/practise/admin/change_controller/changeusername/?id=<?= $this->session->userdata('adminid'); ?>">Change Username</a></li>
+                    <li><a href="http://localhost/interface-bookstore/admin/change_controller/changeusername/?id=<?= $this->session->userdata('adminid'); ?>">Change Username</a></li>
                     <li class="divider"></li>
-                    <li><a href="http://localhost/practise/admin/change_controller/changepassword/?id=<?= $this->session->userdata('adminid'); ?>">Change Password</a></li>
+                    <li><a href="http://localhost/interface-bookstore/admin/change_controller/changepassword/?id=<?= $this->session->userdata('adminid'); ?>">Change Password</a></li>
                     <li class="divider"></li>
                     <li><a href="<?= site_url('admin/dashboard/logout') ?>">Logout</a></li>
                 </ul>
@@ -86,8 +86,8 @@
                 </button>
                 <ul class="dropdown-menu" id="themes">
                     
-                    <li><a href="http://localhost/practise/admin/change_controller/changeusername/?id=<?= $this->session->userdata('adminid'); ?>">Change Username</a></li>
-                    <li><a href="http://localhost/practise/admin/change_controller/changepassword/?id=<?= $this->session->userdata('adminid'); ?>">Change Password</a></li>
+                    <li><a href="http://localhost/interface-bookstore/admin/change_controller/changeusername/?id=<?= $this->session->userdata('adminid'); ?>">Change Username</a></li>
+                    <li><a href="http://localhost/interface-bookstore/admin/change_controller/changepassword/?id=<?= $this->session->userdata('adminid'); ?>">Change Password</a></li>
                 </ul>
             </div>
             <!-- t
