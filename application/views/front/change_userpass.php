@@ -2,8 +2,6 @@
     $this->load->view('front/header.php');
 ?>
 
-
-   
                                 
 
 
