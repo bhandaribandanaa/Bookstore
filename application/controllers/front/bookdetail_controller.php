@@ -13,6 +13,13 @@ class Bookdetail_controller extends CI_Controller {
 		$this->load->view('front/book_detail', $data);
 	}
 
+	public function view_bookdetail()
+	{
+		$id=$this->input->get('id');
+		$this->load->model('front/bookdetail_model');
+		$data['records'] = $this->bookdetail_model->get_book($id);
+		$this->load->view('front/book_detail', $data);
+	}
 
 }
 

@@ -92,7 +92,20 @@ class Customer_model extends CI_Model {
             $data['address']= $this->input->post('address');
             $data['phone']= $this->input->post('phone');
             $data['username']= $this->input->post('username');
-            $data['password']= md5($this->input->post('password'));
+            $data['password']= $this->input->post('password');
+            //$data['role']= $this->input->post('role');
+            $data['image']= $filename;
+            $this->db->where('id',$id);
+            return $this->db->update('customer', $data);
+        } 
+
+        public function view_review(){
+            $id=$this->input->post('id');
+            $data['fullname']= $this->input->post('fullname');
+            $data['address']= $this->input->post('address');
+            $data['phone']= $this->input->post('phone');
+            $data['username']= $this->input->post('username');
+            $data['password']= $this->input->post('password');
             //$data['role']= $this->input->post('role');
             $data['image']= $filename;
             $this->db->where('id',$id);

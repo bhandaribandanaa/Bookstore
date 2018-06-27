@@ -68,12 +68,20 @@
 		          		<div class="tab-content">
 		            		<div class="tab-pane active" id="tab1">
 		               			<p>
-		               				This is tab 1
+		               				hello
 		              			</p>		           
 		            		</div>
 		            		<div class="tab-pane active" id="tab2">
 		               			<p>
-		               				This is tab 2
+		               			<?php foreach ($review as $review) {
+		               				# code...
+		               			}{ ?>
+		               				<b>Book Name : </b>
+		               				<a href="<?= site_url('front/bookdetail_controller/view_bookdetail/?id='.$review->book_id;?>"><?php echo $review['book_title']; ?> </a> <br>
+		               				<b>Comment : </b>
+		               				<?php //echo $review['title'];?> <br>
+		               				<b>Review : </b>
+		               				<?php echo $review['comment']; ?>
 		              			</p>		           
 		            		</div>
 		          		</div>

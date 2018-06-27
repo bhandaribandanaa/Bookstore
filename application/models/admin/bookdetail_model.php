@@ -22,6 +22,11 @@ class Bookdetail_model extends CI_Model{
 		$query=$this->db->get("book_detail");
 		return $query->result();
 	}
+	public function get_book(){
+		$query=$this->db->get_where('book_detail',array('book_id' => $id));
+		return $query->row_array();
+
+	}
 	public function delete_detail($book_id)
 	{
 		$this->db->where('book_id',$book_id);
