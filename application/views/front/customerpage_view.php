@@ -71,17 +71,18 @@
 		               				hello
 		              			</p>		           
 		            		</div>
-		            		<div class="tab-pane active" id="tab2">
+		            		<div class="tab-pane " id="tab2">
 		               			<p>
-		               			<?php foreach ($review as $review) {
-		               				# code...
-		               			}{ ?>
+		               			<?php foreach ($reviews as $review) {
+		               			
+		               			 ?>
 		               				<b>Book Name : </b>
-		               				<a href="<?= site_url('front/bookdetail_controller/view_bookdetail/?id='.$review->book_id;?>"><?php echo $review['book_title']; ?> </a> <br>
+		               				<a href="<?= site_url('front/bookdetail_controller/view_bookdetail/?id='.$review->book_id);?>"><?php echo $review->book_title ?> </a> <br>
+		               				<b>Title : </b>
+		               				<?php echo $review->title;?> <br>
 		               				<b>Comment : </b>
-		               				<?php //echo $review['title'];?> <br>
-		               				<b>Review : </b>
-		               				<?php echo $review['comment']; ?>
+		               				<?php echo $review->comment;?> <br> <br> 
+		               				<?php }?> 
 		              			</p>		           
 		            		</div>
 		          		</div>
