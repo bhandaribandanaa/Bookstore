@@ -19,7 +19,12 @@ class Customerview_controller extends CI_Controller {
 		$id= $this->input->get('id');
 		$this->load->model('front/customerview_model');
 		$data['customer'] = $this->customerview_model->view_customerprofile($id);
+		$data['review'] = $this->customerview_model->view_review($id);
+		var_dump($data['review']);
+		exit();
 		$this->load->view('front/customerpage_view',$data);
 	}
+
+
 
 }
