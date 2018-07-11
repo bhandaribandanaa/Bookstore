@@ -94,8 +94,11 @@
                                         <input type="hidden" name="id" value="<?php echo $records['book_id'];?>" >
                                         <input type="hidden" name="book_title" value="<?php echo $records['book_title'];?>" >
                                         <input type="hidden" name="price" value="<?php echo $records['price'];?>" >
-
-                                            
+                                            <p  style="font-size:14px;float: left;"><b>Rate This Book:</b>&nbsp;&nbsp; </p>
+                                             <?php 
+                                 $this->load->view('rating_view'); ?>
+                                
+                            
                                         <p class="text-center">
                                             <button type="submit" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i> Stock:&nbsp;<?php echo $records['book_stock'];?></button>
                                             <button type="submit" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i> Add to cart</button>
@@ -107,22 +110,23 @@
                                 </div>
                                     <p style="text-align: justify;"><?php echo $records['description'];?></p>
                             </div>
+                            
+                            
 
                         </div>
-
-
-                      
-
                        
                          <div class="col-sm-6">
+
+                               
+                            
                         <div class="box" >
-                                <p style="font-size:13px"><b>Author:</b>&nbsp;&nbsp;<?php echo $records['book_author'];?> </p></div>
+                                <p style="font-size:14px"><b>Author:</b>&nbsp;&nbsp;<?php echo $records['book_author'];?> </p></div>
                         <div>
-                                <p style="font-size:13px"><b>Publisher:</b>&nbsp;&nbsp; <?php echo $records['book_publisher'];?> </p></div>
+                                <p style="font-size:14px"><b>Publisher:</b>&nbsp;&nbsp; <?php echo $records['book_publisher'];?> </p></div>
                         <div class="box" >
-                                <p style="font-size:13px"><b>ISBN:</b>&nbsp;&nbsp; <?php echo $records['isbn'];?> </p></div>
+                                <p style="font-size:14px"><b>ISBN:</b>&nbsp;&nbsp; <?php echo $records['isbn'];?> </p></div>
                         <div >
-                                <p style="font-size:13px"><b>Publication Date:</b>&nbsp;&nbsp; <?php echo $records['publication_date'];?> </p></div>
+                                <p style="font-size:14px"><b>Publication Date:</b>&nbsp;&nbsp; <?php echo $records['publication_date'];?> </p></div>
                         </div>
 
                         </div>
@@ -132,13 +136,44 @@
                         
                     </div>
                      <div class="box social" id="product-social">
-                            <h4>Show it to your friends</h4>
-                            <p>
-                                <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
-                                <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
-                                <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
-                                <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
-                            </p>
+                           <div class="box">
+                               <p>Overall Rating</p>
+                               <table border="2" width="30%">
+                                   <tr>
+                                       <td>Customer Name</td>
+                                       <td>Book Title</td>
+                                       <td>review</td>
+                                       <td>rate</td>
+                                   </tr>
+                                   <?php
+                                        $i=1;   
+                                        foreach($rate as $rt){
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $customer['fullname'];?></td>
+                                        <td><?php echo $rt->title;?></td>
+                                        
+                                        <td><?php echo $rt->comment;?></td>
+                                        <td>
+                                           <div class='userrate'>
+                                            <script type="text/javascript"> 
+                                                $(document).ready(function(){
+          // Below line will get stars images from img folder 
+          $.fn.raty.defaults.path = '<?= base_url() ?>assets/front/img';
+                                             $('.userrate').raty({ score: <?php echo $rt->rate;?>});
+                                         });
+                                        </script>
+                                             
+                                           </div> 
+                                        </td>
+                                    </tr>
+                                    <?php
+                                        $i++;
+                                    }
+                                    ?>
+                                   
+                               </table>
+                           </div>
                         </div>
 
                     <!-- /.col-md-9 -->
@@ -180,6 +215,14 @@ _________________________________________________________ -->
 
         <!-- *** COPYRIGHT ***
 _________________________________________________________ -->
+ 
+                               
 <?php 
     $this->load->view('front/footer');
 ?>
+<!--  jqury raty parts begins from here -->
+<script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
+
+<!--For Raty-->
+<script type="text/javascript" src="<?= base_url() ?>js/jquery.raty.min.js"></script>
+
