@@ -96,7 +96,7 @@
                                         <input type="hidden" name="price" value="<?php echo $records['price'];?>" >
                                             <p  style="font-size:14px;float: left;"><b>Rate This Book:</b>&nbsp;&nbsp; </p>
                                              <?php 
-                                 $this->load->view('rating_view'); ?>
+                                 $this->load->view('front/rating_view'); ?>
                                 
                             
                                         <p class="text-center">
@@ -148,9 +148,10 @@
                                    <?php
                                         $i=1;   
                                         foreach($rate as $rt){
+
                                     ?>
                                     <tr>
-                                        <td><?php echo $customer['fullname'];?></td>
+                                        <td><?php echo $rt->fullname;?></td>
                                         <td><?php echo $rt->title;?></td>
                                         
                                         <td><?php echo $rt->comment;?></td>

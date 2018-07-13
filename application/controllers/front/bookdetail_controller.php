@@ -11,6 +11,8 @@ class Bookdetail_controller extends CI_Controller {
 		$this->load->model('front/bookdetail_model');
 		$data['records'] = $this->bookdetail_model->get_book($id);
 		$data['rate'] = $this->bookdetail_model->get_reviewbybook($id);
+		// print_r($data['rate']);
+		// exit();
 		$data['customer'] = $this->bookdetail_model->get_customername($id);
 	    $this->load->view('front/book_detail', $data);
 	}

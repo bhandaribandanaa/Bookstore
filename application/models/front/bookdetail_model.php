@@ -12,8 +12,10 @@ class Bookdetail_model extends CI_Model {
 
 	public function get_reviewbybook($id)
 	{
-		$this->db->where('book_id',$id);
-        $query=$this->db->get('review');
+		$this->db->select('r.*, c.fullname');
+		$this->db->join('customer c','c.id = r.customer_id');
+		$this->db->where('r.book_id',$id);
+        $query=$this->db->get('review r');
         return $query->result();
 	}
 
