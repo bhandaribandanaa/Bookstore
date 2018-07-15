@@ -13,7 +13,7 @@ class Bookdetail_controller extends CI_Controller {
 		$data['rate'] = $this->bookdetail_model->get_reviewbybook($id);
 		// print_r($data['rate']);
 		// exit();
-		$data['customer'] = $this->bookdetail_model->get_customername($id);
+		// $data['customer'] = $this->bookdetail_model->get_customername($id);
 	    $this->load->view('front/book_detail', $data);
 	}
 

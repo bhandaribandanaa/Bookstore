@@ -115,7 +115,9 @@
                                             <button type="submit" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i> Stock:&nbsp;<?php echo $records['book_stock'];?></button>
                                             <button type="submit" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i> Add to cart</button>
                                             <form action="<?=site_url('front/wishlist_controller/add');?>" method="POST">
-                                            <button type="submit" class="btn btn-template-main" ><span class="glyphicon glyphicon-heart"></span>Add to wishlist</button>
+                                                <input type="hidden" id="book_id" name="book_id" value="<?php echo $records['book_id'];?>">
+                                                <input type="hidden" id="customer_id"  name="customer_id" value="14">
+                                            <button type="submit" class="btn btn-template-main" id="save"><span class="glyphicon glyphicon-heart"></span>Add to wishlist</button>
                                             </form>
                                         </p>
 
@@ -233,12 +235,32 @@ _________________________________________________________ -->
         <!-- *** COPYRIGHT ***
 _________________________________________________________ -->
  
-                               
+                    <script type="text/javascript">
+                        $('#save').on('click',function(){
+            var book_id = $('#book_id').val();
+            var cus_id = $('#customer_id').val();
+            alert(cus_id+ " "+ book_id);
+            $.ajax({
+                type : "POST",
+                url  : "<?php echo site_url('front/wishlist_controller/add')?>",
+                dataType : "JSON",
+                data : {book_id:book_id, cus_id:cus_id},
+                success: function(data){
+                   alert('Added to wishlist succesfully.');
+                }
+            });
+            return false;
+        });
+                    </script>           
 <?php 
     $this->load->view('front/footer');
 ?>
 <!--  jqury raty parts begins from here -->
 <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
+<script src="<?= base_url() ?>assets/css/bootstrap.css"></script>
+<script src="<?= base_url() ?>assets/js/bootstrap.js"></script>
+<script src="<?= base_url() ?>assets/js/jquery-3.2.1.js"></script>
+
 
 <!--For Raty-->
 <script type="text/javascript" src="<?= base_url() ?>js/jquery.raty.min.js"></script>

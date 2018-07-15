@@ -21,7 +21,7 @@ class Wishlist_controller extends CI_Controller {
 	}
 
 	public function add()
-	{
+	{	
 		$data = $this->wishlist_model->save();
 		echo json_encode($data);
 	}
