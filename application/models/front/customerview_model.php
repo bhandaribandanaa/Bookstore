@@ -26,7 +26,7 @@ class customerview_model extends CI_Model {
 	        $this->db->select('*');
 	        $this->db->from('book_detail b');
 	        $this->db->join('review re', 're.book_id = b.book_id');
-            $this->db->where('re.cus_id',$id);
+            $this->db->where('re.customer_id',$id);
             //$data['rc_id']= $query->row()->rc_id;
             // $data= $query->result()->book_id;
             // $query = $this->db->get('table_name');

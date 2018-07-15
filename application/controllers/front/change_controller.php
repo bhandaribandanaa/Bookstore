@@ -22,15 +22,18 @@ class change_controller extends CI_Controller{
 	public function updateuserinfo(){
 		$this->load->model('front/customer_model');
 		  //$filename=$this->upload_file();
-          $data=$this->customer_model->change_user();
+		 $data=$this->customer_model->change_user();
           $id=$this->input->post('id');
+
           if($data){
+
 			redirect(site_url('front/customerview_controller/?id='.$id),'refresh');
 		}else{
 			$this->session->set_flashdata('Error Registering', TRUE);
 			redirect(site_url('front/change_controller/changeuserinfo'),'refresh');
 			exit();
 		}
+          
 	}
 	public function changeuserpass(){
 		$this->load->model('front/customer_model');
@@ -58,6 +61,8 @@ class change_controller extends CI_Controller{
         					'password', 'password',
         					'required|min_length[5]|max_length[20]|required');
 		$this->form_validation->set_rules('passconf', 'Password Confirmation', 'required|matches[password]');
+		//captcha
+
 				if ($this->form_validation->run())
                 {
 						$data= $this->customer_model->change_userpass();
@@ -128,4 +133,29 @@ class change_controller extends CI_Controller{
 				}
         }
 
+
+public function recaptcha($str='')
+  {
+  	$google_url="https://www.google.com/recaptcha/api/siteverify";
+    $secret='6LeHBWMUAAAAAEu4dB5OzZxgEA9-2sMULeNf7-Ej';
+    $ip=$_SERVER['REMOTE_ADDR'];
+    $url=$google_url."?secret=".$secret."&response=".$str."&remoteip=".$ip;
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_URL, $url);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curl, CURLOPT_TIMEOUT, 10);
+    $res = curl_exec($curl);
+    curl_close($curl);
+    $res= json_decode($res, true);
+
+    if($res['success'])
+    {
+      return TRUE;
+    }
+    else
+    {
+      $this->form_validation->set_message('recaptcha', 'The reCAPTCHA field is telling me that you are a robot. Shall we give it another try?');
+      return FALSE;
+    }
+  }
 }

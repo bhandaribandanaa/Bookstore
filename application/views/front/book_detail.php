@@ -71,7 +71,19 @@
                                 <div id="mainImage">
                                     <img src="<?= site_url('uploads/bookdetail/'.$records['image']);?>" alt="<?= site_url('uploads/bookdetail/'.$records['image']);?>" class="img-responsive">
                                 </div>
+                                     <div class="col-sm-6">
 
+                               
+                            
+                        <div class="box" >
+                                <p style="font-size:14px"><b>Author:</b>&nbsp;&nbsp;<?php echo $records['book_author'];?> </p></div>
+                        <div>
+                                <p style="font-size:14px"><b>Publisher:</b>&nbsp;&nbsp; <?php echo $records['book_publisher'];?> </p></div>
+                        <div class="box" >
+                                <p style="font-size:14px"><b>ISBN:</b>&nbsp;&nbsp; <?php echo $records['isbn'];?> </p></div>
+                        <div >
+                                <p style="font-size:14px"><b>Publication Date:</b>&nbsp;&nbsp; <?php echo $records['publication_date'];?> </p></div>
+                        </div>
                                 <!-- /.ribbon 
 
                                 <div class="ribbon new">
@@ -102,7 +114,9 @@
                                         <p class="text-center">
                                             <button type="submit" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i> Stock:&nbsp;<?php echo $records['book_stock'];?></button>
                                             <button type="submit" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i> Add to cart</button>
-
+                                            <form action="<?=site_url('front/wishlist_controller/add');?>" method="POST">
+                                            <button type="submit" class="btn btn-template-main" ><span class="glyphicon glyphicon-heart"></span>Add to wishlist</button>
+                                            </form>
                                         </p>
 
                                     </form>
@@ -115,68 +129,70 @@
 
                         </div>
                        
-                         <div class="col-sm-6">
-
-                               
-                            
-                        <div class="box" >
-                                <p style="font-size:14px"><b>Author:</b>&nbsp;&nbsp;<?php echo $records['book_author'];?> </p></div>
-                        <div>
-                                <p style="font-size:14px"><b>Publisher:</b>&nbsp;&nbsp; <?php echo $records['book_publisher'];?> </p></div>
-                        <div class="box" >
-                                <p style="font-size:14px"><b>ISBN:</b>&nbsp;&nbsp; <?php echo $records['isbn'];?> </p></div>
-                        <div >
-                                <p style="font-size:14px"><b>Publication Date:</b>&nbsp;&nbsp; <?php echo $records['publication_date'];?> </p></div>
-                        </div>
-
-                        </div>
-
-                       
-
                         
-                    </div>
+
+                        </div>
+
+                       </div>
+
+
                      <div class="box social" id="product-social">
-                           <div class="box">
-                               <p>Overall Rating</p>
-                               <table border="2" width="30%">
-                                   <tr>
-                                       <td>Customer Name</td>
-                                       <td>Book Title</td>
-                                       <td>review</td>
-                                       <td>rate</td>
-                                   </tr>
-                                   <?php
+
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="<?=site_url('assets/css/comment.css')?>">
+<div class="container">
+                                    
+    <div class="row">
+        <?php
                                         $i=1;   
                                         foreach($rate as $rt){
 
                                     ?>
-                                    <tr>
-                                        <td><?php echo $rt->fullname;?></td>
-                                        <td><?php echo $rt->title;?></td>
+        <div class="col-sm-8">
+            <div class="panel panel-white post panel-shadow">
+                <div class="post-heading">
+                    <!-- <div class="pull-left image">
+                        <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
+                    </div> -->
+                    <div class="pull-left meta">
+                        <div class="title h5">
+                            <a href="#"><b><?php echo $rt->fullname;?></b></a>
+                            rated this book <div class='userrate'>
+                                            
                                         
-                                        <td><?php echo $rt->comment;?></td>
-                                        <td>
-                                           <div class='userrate'>
-                                            <script type="text/javascript"> 
+                                           </div> 
+                                           <script type="text/javascript"> 
                                                 $(document).ready(function(){
           // Below line will get stars images from img folder 
           $.fn.raty.defaults.path = '<?= base_url() ?>assets/front/img';
                                              $('.userrate').raty({ score: <?php echo $rt->rate;?>});
                                          });
                                         </script>
-                                             
-                                           </div> 
-                                        </td>
-                                    </tr>
+                                           <br>
+                                             <b>"<?php echo $rt->title;?>"</b>
+                        
+                                        
+                </div> 
+                
+        </div>
+        
+    </div>
+                                        <div class="post-description"> 
+                                        <p><?php echo $rt->comment;?></p>    
+                                    </div>
+</div>
+</div>
                                     <?php
                                         $i++;
                                     }
                                     ?>
-                                   
-                               </table>
-                           </div>
-                        </div>
+</div>
 
+
+
+                        
+                    </div>
+                      </div>
                     <!-- /.col-md-9 -->
 
 

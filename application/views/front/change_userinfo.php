@@ -7,7 +7,7 @@
                                 
 
 
-
+<script src='https://www.google.com/recaptcha/api.js'></script>
 
         <div id="heading-breadcrumbs">
             <div class="container">
@@ -77,8 +77,14 @@
                     <input type="hidden" name="status" id="status" value="<?php echo $records->status;?>">
                     <input type="hidden" name="token" id="token" value="<?php echo $records->token;?>">
                     <input type="hidden" name="id" value="<?php echo $records->id;?>">
-                    <button type="submit" name='update' value="UPDATE" class="btn btn-primary">UPDATE</button>
+                    <div class="form-group">
+                        <div class="g-recaptcha" data-sitekey="6LeHBWMUAAAAAI6E4vNdle8MRIZC80FynBElI61n"></div>
+                    </div>
                     
+
+
+                    <button type="submit" name='update' value="UPDATE" class="btn btn-primary">UPDATE</button>
+
                 </form>
 
                         </div>
