@@ -238,13 +238,13 @@ _________________________________________________________ -->
                     <script type="text/javascript">
                         $('#save').on('click',function(){
             var book_id = $('#book_id').val();
-            var cus_id = $('#customer_id').val();
-            alert(cus_id+ " "+ book_id);
+            // var cus_id = $('#customer_id').val();
+            // alert(book_id);
             $.ajax({
                 type : "POST",
                 url  : "<?php echo site_url('front/wishlist_controller/add')?>",
                 dataType : "JSON",
-                data : {book_id:book_id, cus_id:cus_id},
+                data : {book_id: book_id, cus_id: cus_id},
                 success: function(data){
                    alert('Added to wishlist succesfully.');
                 }

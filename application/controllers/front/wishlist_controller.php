@@ -22,15 +22,17 @@ class Wishlist_controller extends CI_Controller {
 
 	public function add()
 	{	
-		$data = $this->wishlist_model->save();
+		$cus_id = $this->session->userdata('id');
+		$book_id = $this->input->post('book_id');
+		$data = $this->wishlist_model->save($cus_id,$book_id);
 		echo json_encode($data);
 	}
 
-	public function update()
-	{
-		$data = $this->wishlist_model->update();
-		echo json_encode($data);
-	}
+	// public function update()
+	// {
+	// 	$data = $this->wishlist_model->update();
+	// 	echo json_encode($data);
+	// }
 
 	public function delete()
 	{
