@@ -20,6 +20,8 @@ class Customerview_controller extends CI_Controller {
 		$this->load->model('front/customerview_model');
 		$data['customer'] = $this->customerview_model->view_customerprofile($id);
 		$data['reviews'] = $this->customerview_model->view_review($id);
+		$data['wishlist'] = $this->customerview_model->view_wishlist($id);
+
 		/*foreach ($data['review'] as $row) {
 			echo $row->comment;
 		// }*/

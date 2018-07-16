@@ -106,23 +106,23 @@
                                         <input type="hidden" name="id" value="<?php echo $records['book_id'];?>" >
                                         <input type="hidden" name="book_title" value="<?php echo $records['book_title'];?>" >
                                         <input type="hidden" name="price" value="<?php echo $records['price'];?>" >
-                                            <p  style="font-size:14px;float: left;"><b>Rate This Book:</b>&nbsp;&nbsp; </p>
-                                             <?php 
-                                 $this->load->view('front/rating_view'); ?>
+                                           
                                 
                             
                                         <p class="text-center">
                                             <button type="submit" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i> Stock:&nbsp;<?php echo $records['book_stock'];?></button>
                                             <button type="submit" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i> Add to cart</button>
-                                            <form action="<?=site_url('front/wishlist_controller/add');?>" method="POST">
-                                                <input type="hidden" id="book_id" name="book_id" value="<?php echo $records['book_id'];?>">
-                                                <input type="hidden" id="customer_id"  name="customer_id" value="14">
-                                            <button type="submit" class="btn btn-template-main" id="save"><span class="glyphicon glyphicon-heart"></span>Add to wishlist</button>
-                                            </form>
+                                            
                                         </p>
 
                                     </form>
-
+                                    <form action="<?=site_url('front/wishlist_controller/add');?>" method="POST">
+                                                <input type="hidden" id="book_id" name="book_id" value="<?php echo $records['book_id'];?>">
+                                            <button type="submit" class="btn btn-template-main" id="save"><span class="glyphicon glyphicon-heart"></span>Add to wishlist</button>
+                                            </form>
+                                         <p  style="font-size:14px;float: left;"><b>Rate This Book:</b>&nbsp;&nbsp; </p>
+                                             <?php 
+                                 $this->load->view('front/rating_view'); ?>
                                 </div>
                                     <p style="text-align: justify;"><?php echo $records['description'];?></p>
                             </div>

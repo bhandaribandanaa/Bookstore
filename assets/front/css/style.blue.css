@@ -2280,7 +2280,7 @@ fieldset[disabled] .btn-template-primary.active {
 .product .buttons {
   clear: both;
   position: absolute;
-  display: none;
+  display: inline;
   bottom: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

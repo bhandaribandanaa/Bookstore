@@ -1,6 +1,7 @@
 <?php 
 	$this->load->view('front/header');
 
+
     function currencyConverter($from_Currency,$to_Currency,$amount) {
     $from_Currency = urlencode($from_Currency);
     $to_Currency = urlencode($to_Currency);
@@ -13,7 +14,7 @@
 }
 
 // change amount according to your needs
-$amount =1;
+$amount = 1;
 // change From Currency according to your needs
 //$from_Curr ='NPR';
 $from_Curr ='USD';

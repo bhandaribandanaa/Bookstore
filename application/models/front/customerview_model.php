@@ -47,4 +47,20 @@ class customerview_model extends CI_Model {
 
 
         } 
+
+        public function view_wishlist($id)
+        {
+            $this->db->select('*');
+            $this->db->from('customer c');
+            $this->db->join('wishlist w', 'c.id = w.cus_id');
+            $this->db->where('c.id',$id);
+            $query= $this->db->get();
+
+            foreach($query->result() as $row)
+            {
+                $array[] = $row; // add each user id to the array
+            }
+
+            return $array;
+        }
 }

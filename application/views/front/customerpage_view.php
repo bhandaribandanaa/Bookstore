@@ -77,7 +77,7 @@
 		               			
 		               			 ?>
 		               				<b>Book Name : </b>
-		               				<a href="<?= site_url('front/bookdetail_controller/view_bookdetail/?id='.$review->book_id);?>"><?php echo $review->book_title ?> </a> <br>
+		               				<a href="<?= site_url('front/bookdetail_controller/view_bookdetail/?id='.$review->book_id);?>"><?php echo $review->book_title; ?> </a> <br>
 		               				<b>Title : </b>
 		               				<?php echo $review->title;?> <br>
 		               				<b>Comment : </b>
@@ -102,6 +102,10 @@
     			</div>
 	    		<div class="panel-body">
 	        		No wishlist found
+
+	        		<?php foreach ($wishlist as $w): ?>
+	        			<li><?php $w->book_id; ?></li>
+	        		<?php endforeach ?>
 	    		</div>
 			</div>
   		</div> <!-- End of Wishlist-->
