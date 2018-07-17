@@ -15,9 +15,7 @@ class Rating_model extends CI_Model {
              return $this->db->insert('review',$data);
         	
         }
-        public function get_reviewbybook(){
-            
-        }
+        
  
     }
          

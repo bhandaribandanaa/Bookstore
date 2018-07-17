@@ -122,7 +122,7 @@
                                             
                                     <p  style="font-size:14px;float: left;"><b>Rate This Book:</b>&nbsp;&nbsp; </p>
                                              <?php 
-                                 $this->load->view('front/rating_view'); ?>
+                                 $this->load->view('front/add_review'); ?>
                                 </div>
                                     <p style="text-align: justify;"><?php echo $records['description'];?></p>
                             </div>
@@ -182,7 +182,19 @@
                                         <div class="post-description"> 
                                         <p><?php echo $rt->comment;?></p>    
                                     </div>
+                                    <?php if( $rt->customer_id == $this->session->userdata('id')){ ?>
+                                        <div>
+                                    <a class="btn btn-info" href="<?=site_url('front/review_controller/edit_review/?review_id='.$rt->review_id);?>" data-toggle="modal" data-target="#edit_review" >
+                <i class="glyphicon glyphicon-edit icon-white" title="Edit review"></i>
+            </a>
+                                    <a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?');" href="<?=site_url('front/review_controller/delete_review/?review_id='.$rt->review_id.'&book_id='.$rt->book_id);?>">
+                <i class="glyphicon glyphicon-trash icon-white" title="Delete review"></i>
+            </a>
+        </div>
+        <?php } ?>
+
 </div>
+
 </div>
                                     <?php
                                         $i++;

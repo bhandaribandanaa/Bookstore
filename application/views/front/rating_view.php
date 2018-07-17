@@ -5,7 +5,8 @@
     <title>Jquery Raty usage in PHP - Simple Star Rating Plugin</title>
 </head>
 <body>
-	<form method="POST" action="http://localhost/practise/front/rating_controller/insertrate">
+	<form method="POST" action="http://localhost/interface-bookstore/front/rating_controller/insertrate">
+		<label> Rate this book:</label>
 		<div id="star" >
 		
 		
