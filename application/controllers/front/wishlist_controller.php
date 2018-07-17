@@ -25,7 +25,7 @@ class Wishlist_controller extends CI_Controller {
 		$cus_id = $this->session->userdata('id');
 		// $book_id = $this->input->post('book_id');
 		$data = $this->wishlist_model->save($cus_id);
-		echo json_encode($data);
+		echo $data;
 	}
 
 	// public function update()

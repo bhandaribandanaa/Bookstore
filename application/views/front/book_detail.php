@@ -116,11 +116,11 @@
                                         </p>
 
                                     </form>
-                                    <form action="<?=site_url('front/wishlist_controller/add');?>" method="POST">
-                                                <input type="hidden" id="book_id" name="book_id" value="<?php echo $records['book_id'];?>">
-                                            <button type="submit" class="btn btn-template-main" id="save"><span class="glyphicon glyphicon-heart"></span>Add to wishlist</button>
-                                            </form>
-                                         <p  style="font-size:14px;float: left;"><b>Rate This Book:</b>&nbsp;&nbsp; </p>
+                                   
+                                    <input type="hidden" id="book_id" name="book_id" value="<?php echo $records['book_id'];?>">
+                                    <div class="btn btn-template-main" id="save"><span class="glyphicon glyphicon-heart"></span>Add to wishlist</div>
+                                            
+                                    <p  style="font-size:14px;float: left;"><b>Rate This Book:</b>&nbsp;&nbsp; </p>
                                              <?php 
                                  $this->load->view('front/rating_view'); ?>
                                 </div>
@@ -236,21 +236,36 @@ _________________________________________________________ -->
 _________________________________________________________ -->
  
                     <script type="text/javascript">
+                        /*$('#save').on('click',function(){
+                            //e.preventDefault();
+                           // alert();
+                            var book_id = $('#book_id').val();
+                            //var cus_id = $('#customer_id').val();
+                            // alert(book_id);
+                            $.ajax({
+                                type : "POST",
+                                url  : "<?php echo site_url('front/wishlist_controller/add')?>",
+                                data : {book_id: book_id}
+                                })
+                                .done(function(data){
+                                   alert('Added to wishlist succesfully.');
+                                }).fail(function(){
+                                    alert('fail');
+                                });
+                        });
+                         */
                         $('#save').on('click',function(){
-            var book_id = $('#book_id').val();
-            // var cus_id = $('#customer_id').val();
-            // alert(book_id);
-            $.ajax({
-                type : "POST",
-                url  : "<?php echo site_url('front/wishlist_controller/add')?>",
-                dataType : "JSON",
-                data : {book_id: book_id, cus_id: cus_id},
-                success: function(data){
-                   alert('Added to wishlist succesfully.');
-                }
-            });
-            return false;
-        });
+                            var book_id = $('#book_id').val();
+                            $.post("<?php echo site_url('front/wishlist_controller/add')?>",{book_id: book_id})
+                            .done(function(data){
+                                if(data == 1)
+                                    alert('Added to wishlist succesfully.');
+                                else
+                                    alert('exist');
+                            }).fail(function(){
+                                alert('fail');
+                            });
+                        });
                     </script>           
 <?php 
     $this->load->view('front/footer');

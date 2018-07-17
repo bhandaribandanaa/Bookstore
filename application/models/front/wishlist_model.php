@@ -21,7 +21,9 @@ public function save($cus_id)
         'book_id' => $book_id
     );
     $result = $this->db->insert('wishlist', $data);
-    return $result;  
+    if($result == 1)
+        return 1;
+    return 2;
     }
 
     

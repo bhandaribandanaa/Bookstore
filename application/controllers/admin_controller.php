@@ -6,7 +6,10 @@ class admin_controller extends CI_Controller{
 		$this->load->view('admin_view');
 		$data['records']=$this->viewuser();
 		$this->load->view('admintable_view',$data);
-		}
+		// $this->load->view('search_view',$data);
+		// $this->load->view('',$data);
+		// $data['results']=$this->search();
+		 }
 	public function adduser(){
 		$this->load->model('admin_model');
 		$this->admin_model->insert_user();
@@ -50,4 +53,16 @@ class admin_controller extends CI_Controller{
 			echo "not updated";
 		}
 }
+  public function search()
+    {
+    		$this->load->model('admin_model');
+        // Retrieve the posted search term.
+        $search_term = $this->input->post('search');
+
+        // Use a model to retrieve the results.
+        $data['results'] = $this->admin_model->get_results($search_term);
+
+        // Pass the results to the view.
+        $this->load->view('search_view',$data);
+    }
 }

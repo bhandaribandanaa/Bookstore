@@ -48,6 +48,20 @@ class admin_model extends CI_Model {
             $data['password']=$password;
             $this->db->where('id',$id);
             return $this->db->update('admin', $data);
-        }  
+        }
+        public function get_results($search_term='default')
+    {
+        // Use the Active Record class for safer queries.
+        // $this->db->select('*');
+        $this->db->from('admin');
+        $this->db->like('username',$search_term);
+        // $this->db->or_like('password',$search_term);
+
+        // Execute the query.
+        $query = $this->db->get();
+
+        // Return the results.
+        return $query->result();
+    }
     }
 ?>
