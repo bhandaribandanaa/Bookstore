@@ -58,9 +58,23 @@ class customerview_model extends CI_Model {
 
             foreach($query->result() as $row)
             {
-                $array[] = $row; // add each user id to the array
+                $array[] = $row->book_id;
+                // $id = strval($row);
+                // $book[] = $id;
+                // add each user id to the array
             }
+            //print_r($array);
+           //$array = implode(',', $array);
+            $this->db->select('book_title');
+            $this->db->from('book_detail');
+            $this->db->where_in('book_id', $array);
+            $query1 = $this->db->get();
 
-            return $array;
+            return $query1->result();
+
+
+
+
         }
+
 }

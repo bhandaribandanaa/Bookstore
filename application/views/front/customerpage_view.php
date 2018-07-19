@@ -104,7 +104,7 @@
 	        		No wishlist found
 
 	        		<?php foreach ($wishlist as $w): ?>
-	        			<li><?php $w->book_id; ?></li>
+	        			<li><?php echo $w->book_title; ?></li>
 	        		<?php endforeach ?>
 	    		</div>
 			</div>

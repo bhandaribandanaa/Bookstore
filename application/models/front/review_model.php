@@ -18,9 +18,20 @@ class Review_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->where('review_id',$review_id);
 		$query = $this->db->get('review');
-		return $query->row_array();
+		$data['review'] = $query->row();
+		return $data;
 	}
 
+	public function update_review($review_id,$cus_id,$book_id)
+	{
+			// $data['rate']=  $this->input->post('score');
+             $data['title']= $this->input->post('title');
+             $data['comment'] = $this->input->post('comment');
+             $data['book_id']= $book_id ;
+             $data['customer_id']= $cus_id;
+             $this->db->where('review_id',$review_id);
+             return $this->db->update('review', $data);
+	}
 	public function delete_review($review_id)
 	{
 		$this->db->where('review_id',$review_id);

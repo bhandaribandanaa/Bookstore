@@ -90,7 +90,7 @@
                                     <div class="theribbon">NEW</div>
                                     <div class="ribbon-background"></div>
                                 </div>
-                                <!-- /.ribbon -->
+                                /.ribbon -->
 
                             </div>
                             <div class="col-sm-6">
@@ -101,6 +101,19 @@
                                             <h3><?php echo $records['book_title'];?></h3>
                                             
                                         </div>
+                                        <div class="product-social">
+                                            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Check out this book available " data-via="interfacebookstore" data-hashtags="books" data-lang="en" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                            <!-- facebook -->
+                                            <a href="http://www.facebook.com/sharer.php?u=http://localhost/interface-bookstore/front/bookdetail_controller/?id=<?php echo $records['book_title'];?>" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                                        </div>
+                                        <!-- gplus -->
+                                        <a href="https://plus.google.com/share?url=http://localhost/interface-bookstore/front/bookdetail_controller/?id=<?php echo $records['book_title'];?>" onclick="javascript:window.open(this.href,
+  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img
+  src="https://www.gstatic.com/images/icons/gplus-64.png" alt="Share on Google+"/></a>
+
+                                    <!-- pinterest-->
+                                    <a href ="http://pinterest.com/pin/create/button/?url=http://localhost/interface-bookstore/front/bookdetail_controller/?id=<?php echo $records['book_id'];?>&media=<?= site_url('uploads/bookdetail/'.$records['image']);?>" alt="<?= site_url('uploads/bookdetail/'.$records['image']);?>" ></a>
+
 
                                         <p class="price">Rs. <?php echo $records['price'];?></p>
                                         <input type="hidden" name="id" value="<?php echo $records['book_id'];?>" >
@@ -116,16 +129,22 @@
                                         </p>
 
                                     </form>
-                                   
+                                   <div class="text-center">
                                     <input type="hidden" id="book_id" name="book_id" value="<?php echo $records['book_id'];?>">
+                                    <?php if(is_userlogin()){?>
                                     <div class="btn btn-template-main" id="save"><span class="glyphicon glyphicon-heart"></span>Add to wishlist</div>
-                                            
-                                    <p  style="font-size:14px;float: left;"><b>Rate This Book:</b>&nbsp;&nbsp; </p>
+                                           
                                              <?php 
                                  $this->load->view('front/add_review'); ?>
                                 </div>
+                                <?php }else{?>
+                                   <a href="<?=site_url('front/customer_controller');?>"> <div class="btn btn-template-main"><span class="glyphicon glyphicon-heart"></span>Add to wishlist</div></a>
+                                   <a href="<?=site_url('front/customer_controller');?>"> <div class="btn btn-template-main"></span>Add Review</div></a>
+                                <?php }?> 
+                            </div>
                                     <p style="text-align: justify;"><?php echo $records['description'];?></p>
                             </div>
+
                             
                             
 
@@ -179,22 +198,82 @@
         </div>
         
     </div>
-                                        <div class="post-description"> 
+                                        <div class="post-description" id="post-description"> 
                                         <p><?php echo $rt->comment;?></p>    
                                     </div>
                                     <?php if( $rt->customer_id == $this->session->userdata('id')){ ?>
                                         <div>
-                                    <a class="btn btn-info" href="<?=site_url('front/review_controller/edit_review/?review_id='.$rt->review_id);?>" data-toggle="modal" data-target="#edit_review" >
-                <i class="glyphicon glyphicon-edit icon-white" title="Edit review"></i>
-            </a>
+                                 
                                     <a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?');" href="<?=site_url('front/review_controller/delete_review/?review_id='.$rt->review_id.'&book_id='.$rt->book_id);?>">
                 <i class="glyphicon glyphicon-trash icon-white" title="Delete review"></i>
             </a>
         </div>
+        <a type="button" class="btn btn-info" data-toggle="modal" data-target="#editreview<?php echo $rt->review_id;?>"><i class="glyphicon glyphicon-edit"></i></a>
+
+        <!-- $this->load->view('front/edit_review'); -->
+
         <?php } ?>
 
 </div>
+<div class="modal fade" id="editreview<?php echo $rt->review_id;?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Your Review</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="<?=site_url('front/review_controller/update_review');?>" method="POST">
+          <div class="form-group">
+          <input class="form-control" type="text" name="title" id="title" value="<?php echo $rt->title;?>" required>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" type="text" name="comment" id="comment" required><?php echo $rt->comment;?></textarea>
+          </div>
+          <div class="form-group">
+        <label> Rate this book:</label>
+    <div id="star" >
+    
+    
+  </div>
+  <input type="hidden" name="score" id="score" value="<?php echo $rt->rate;?>" />
+          </div>
+          <input type="hidden" name="book_id" value="<?php echo $rt->book_id;?>" >
+        <input type="hidden" name="review_id" value="<?php echo $rt->review_id;?>" >
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Update Review</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="<?= base_url() ?>js/jquery.raty.min.js"></script>
+<script type="text/javascript">
 
+  $(document).ready(function(){
+      // Below line will get stars images from img folder 
+      $.fn.raty.defaults.path = '<?= base_url() ?>assets/front/img';
+      $('#star').raty({
+        click: function(score, evt) {
+          // alert('score: ' + score); 
+          document.getElementById("score").value = score;
+         //  $.ajax({
+         //   type: 'POST',
+         //   url: '/rating_controller.php',
+         //   data: {'score':score},
+         //  success: function(data){ alert('your rating have been saved'); }         
+         // });
+
+    }
+
+    });
+                });
+
+  </script>
 </div>
                                     <?php
                                         $i++;
@@ -273,20 +352,22 @@ _________________________________________________________ -->
                                 if(data == 1)
                                     alert('Added to wishlist succesfully.');
                                 else
-                                    alert('exist');
+                                    alert('Already in your wishlist!');
                             }).fail(function(){
                                 alert('fail');
                             });
                         });
+
+                        
                     </script>           
 <?php 
     $this->load->view('front/footer');
 ?>
 <!--  jqury raty parts begins from here -->
-<script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
+<!-- <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
 <script src="<?= base_url() ?>assets/css/bootstrap.css"></script>
 <script src="<?= base_url() ?>assets/js/bootstrap.js"></script>
-<script src="<?= base_url() ?>assets/js/jquery-3.2.1.js"></script>
+<script src="<?= base_url() ?>assets/js/jquery-3.2.1.js"></script> -->
 
 
 <!--For Raty-->

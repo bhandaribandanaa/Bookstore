@@ -5,7 +5,7 @@
 </head>
 <body>
 	<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#review">
+<button type="button" class="btn btn-template-main" data-toggle="modal" data-target="#review">
   Add Review
 </button>
 
