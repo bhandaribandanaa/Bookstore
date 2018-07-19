@@ -53,6 +53,21 @@ _________________________________________________________ -->
             <div id="top">
                 <div class="container">
                     <div class="row">
+                    	  <div> 
+                            <form method="POST" action="http://localhost/interface-bookstore/front/search_controller/search"/>
+                            <div class="input-group">
+                            <input type='text' name='search'value="Search" placeholder="Search for book title, author, isbn, etc.">
+                            <button type="submit" name="search" value="Search" class="btn btn-xs btn-template-main" title='search'><i class="fa fa-search"></i></button>
+                        </div>
+                           <!--  <?php
+                            // echo form_open('search_controller/search');
+
+                            // echo form_input(array('name'=>'search'));
+
+                            // echo form_submit('search_submit','Search');
+                            ?>  -->
+                             </form>
+                        </div>
                         <div class="col-xs-5 contact">
                             <p class="hidden-md hidden-lg"><a href="#" data-animate-hover="pulse"><i class="fa fa-phone"></i></a>  <a href="#" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
                             </p>
