@@ -32,12 +32,7 @@
         <section>
 
             
-                            <div class="embed-responsive embed-responsive-4by3" height="10%" widht="5%">
-                                    
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.5913564454904!2d85.33606701465598!3d27.69902228279534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb199940d81663%3A0xaf36b9b58903050f!2sApex+College!5e0!3m2!1sen!2snp!4v1509343888641" ></iframe>
-                                </div>
-              
-            
+                          
 
         </section>
 
@@ -119,27 +114,20 @@ _________________________________________________________ -->
     <!-- /#all -->
 
     <!-- #### JAVASCRIPT FILES ### -->
-
+<!-- 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>
         window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
     </script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> -->
 
-    <script src="js/jquery.cookie.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/jquery.parallax-1.1.3.js"></script>
-    <script src="js/front.js"></script>
+    
 
     
 
     <!-- gmaps -->
 
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
-
-    <script src="js/gmaps.js"></script>
-    <script src="js/gmaps.init.js"></script>
+    
 
     <!-- gmaps end -->
 

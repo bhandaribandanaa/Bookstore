@@ -10,8 +10,9 @@ class search_controller extends CI_Controller{
     	$this->load->model('front/search_model');
         $this->load->model('front/category_model');
         // Retrieve the posted search term.
-        $search_term = $this->input->post('search');
-
+            $search_term = $this->input->post('search');
+            // echo $search_term;
+            // die();
         // Use a model to retrieve the results.
         $data['results'] = $this->search_model->get_results($search_term);
         $data['categories'] = $this->category_model->view_bookcategory();

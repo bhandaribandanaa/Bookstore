@@ -123,7 +123,7 @@
                                 
                             
                                         <p class="text-center">
-                                            <button type="submit" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i> Stock:&nbsp;<?php echo $records['book_stock'];?></button>
+                                            <button type="button" class="btn btn-template-main"><i class=""></i> Stock:&nbsp;<?php echo $records['book_stock'];?></button>
                                             <button type="submit" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i> Add to cart</button>
                                             
                                         </p>

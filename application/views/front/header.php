@@ -56,8 +56,8 @@ _________________________________________________________ -->
                     	  <div> 
                             <form method="POST" action="http://localhost/interface-bookstore/front/search_controller/search"/>
                             <div class="input-group">
-                            <input type='text' name='search'value="Search" placeholder="Search for book title, author, isbn, etc.">
-                            <button type="submit" name="search" value="Search" class="btn btn-xs btn-template-main" title='search'><i class="fa fa-search"></i></button>
+                            <input type='text' name='search' placeholder="Search for book title, author, isbn, etc.">
+                            <button type="submit"   class="btn btn-xs btn-template-main" title='search'><i class="fa fa-search"></i></button>
                         </div>
                            <!--  <?php
                             // echo form_open('search_controller/search');

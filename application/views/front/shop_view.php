@@ -128,9 +128,7 @@ _________________________________________________________ -->
 
                         <div class="pages">
 
-                            <p class="loadMore">
-                                <a href="#" class="btn btn-template-main"><i class="fa fa-chevron-down"></i> Load more</a>
-                            </p>
+                           
 
                             <ul class="pagination">
                                 <li><a href="#">&laquo;</a>

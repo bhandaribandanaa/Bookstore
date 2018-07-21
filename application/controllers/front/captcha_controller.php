@@ -6,6 +6,7 @@ class Captcha_controller extends CI_Controller {
 	public function index()
 	{
 		$this->form_validation->set_rules('name','Name','trim|required');
+			$this->form_validation->set_rules('captcha','captcha','trim|required');
  
     if($this->form_validation->run()===FALSE)
     {
@@ -23,22 +24,23 @@ public function recaptcha($str='')
     $secret='6LeHBWMUAAAAAEu4dB5OzZxgEA9-2sMULeNf7-Ej';
     $ip=$_SERVER['REMOTE_ADDR'];
     $url=$google_url."?secret=".$secret."&response=".$str."&remoteip=".$ip;
-    $curl = curl_init();
-    curl_setopt($curl, CURLOPT_URL, $url);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($curl, CURLOPT_TIMEOUT, 10);
-    $res = curl_exec($curl);
-    curl_close($curl);
-    $res= json_decode($res, true);
+    // $curl = curl_init();
+    // curl_setopt($curl, CURLOPT_URL, $url);
+    // curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    // curl_setopt($curl, CURLOPT_TIMEOUT, 10);
+    // $res = curl_exec($curl);
+    // curl_close($curl);
+    $data= json_decode($url);
 
-    if($res['success'])
+    if(isset($data->success)&&$data->success="true")
     {
-      return TRUE;
+      echo "success";
     }
     else
     {
-      $this->form_validation->set_message('recaptcha', 'The reCAPTCHA field is telling me that you are a robot. Shall we give it another try?');
-      return FALSE;
+    	echo "please fill captcha";
+      // $this->form_validation->set_message('recaptcha', 'The reCAPTCHA field is telling me that you are a robot. Shall we give it another try?');
+      // return FALSE;
     }
   }
 }
