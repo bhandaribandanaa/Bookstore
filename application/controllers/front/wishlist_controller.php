@@ -9,7 +9,7 @@ class Wishlist_controller extends CI_Controller {
 		//validate admin login
 		if(!is_userlogin())
 		{
-			redirect(site_url('front/shop_controller'),'refresh');
+			redirect(site_url('front/shop_controller/view'),'refresh');
 			exit();
 		}
 		$this->load->model('front/wishlist_model');
@@ -36,8 +36,10 @@ class Wishlist_controller extends CI_Controller {
 
 	public function delete()
 	{
-		$data = $this->wishlist_model->delete();
-		echo json_encode($data);
+		$cus_id = $this->session->userdata('id');
+		// echo $cus_id;
+		$data = $this->wishlist_model->delete($cus_id);
+		echo $data;
 	}
 
 }

@@ -10,7 +10,7 @@ class Dashboard extends CI_Controller {
 		//validate admin login
 		if(!is_userlogin())
 		{
-			redirect(site_url('front/shop_controller'),'refresh');
+			redirect(site_url('front/shop_controller/view'),'refresh');
 			exit();
 		}
 	}
@@ -31,7 +31,7 @@ class Dashboard extends CI_Controller {
 		$this->load->library('cart');
 		$this->cart->destroy();
 		$this->session->unset_userdata('user_logged_in');
-		redirect(site_url('front/shop_controller'),'refresh');
+		redirect(site_url('front/shop_controller/view'),'refresh');
 	}
 
 }

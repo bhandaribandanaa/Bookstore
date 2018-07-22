@@ -7,7 +7,7 @@ class change_controller extends CI_Controller{
 		//validate admin login
 		if(!is_userlogin())
 		{
-			redirect(site_url('front/shop_controller'),'refresh');
+			redirect(site_url('front/shop_controller/view'),'refresh');
 			exit();
 		}
 	}

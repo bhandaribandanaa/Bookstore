@@ -3,11 +3,19 @@
 
   class Upload extends CI_Controller {
 
+
+        //validate admin login
+        
         public function __construct()
         {
             parent::__construct();
             $this->load->helper(array('form', 'url'));
             $this->load->library('form_validation');
+        if(!is_adminlogin())
+        {
+            redirect(site_url('admin/login'),'refresh');
+            exit();
+        }
         }
 
         public function index()

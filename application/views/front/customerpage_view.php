@@ -11,7 +11,7 @@
                     <div class="col-md-5">
                         <ul class="breadcrumb">
 
-                            <li><a href="<?=site_url('front/shop_controller');?>">Home</a>
+                            <li><a href="<?=site_url('front/shop_controller/view');?>">Home</a>
                             </li>
                             <li><?php echo $customer['username']; ?></li>
                         </ul>
@@ -56,7 +56,7 @@
 		          		<ul class="nav nav-tabs ">
 		            		<li class="active">
 		              			<a href="#tab1" data-toggle="tab">
-		              				Rate 
+		              				My Order
 		              			</a>
 		            		</li>
 		            		<li>
@@ -67,9 +67,36 @@
 		          		</ul>
 		          		<div class="tab-content">
 		            		<div class="tab-pane active" id="tab1">
+		               			<?php 
+		               			
+		               			if (count($order) === 1){ 
+		               				?>
+		               					<p>You don't have any orders yet.</p>
+		               					<?php } else { ?> 
 		               			<p>
-		               				hello
-		              			</p>		           
+		               				
+		               				<table class="table">
+		               				<tr>
+		               					<th>Book</th>
+		               					<th>Quantity</th>
+		               					<th>Total Amount</th>
+		               					<th></th>
+		               				</tr>
+		               				<?php foreach(array_slice($order,1) as $order) { 
+		               					?>
+		               				<tr>
+		               					<?php if($order->status!="Canceled"){ ?>
+		               					<td><a href="<?=site_url('front/bookdetail_controller/?id='.$order->book_id);?>"><?php echo $order->book_title; ?></a></td>
+		               					<td><?php echo $order->quantity; ?></td>
+		               					<td><?php echo $order->total_amount; ?></td>
+		               					<td><a href="<?=site_url('front/customerview_controller/cancel_order/?order_id='.$order->or_id);?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to cancel this order?');" >Cancel Order?</a></td>
+		               				</tr>
+		               			<?php } ?>
+		               				<?php } ?>
+		               				</table>
+		               			
+		              			</p>
+		              			<?php } ?>		           
 		            		</div>
 		            		<div class="tab-pane " id="tab2">
 		               			<p>
@@ -77,7 +104,7 @@
 		               			
 		               			 ?>
 		               				<b>Book Name : </b>
-		               				<a href="<?= site_url('front/bookdetail_controller/view_bookdetail/?id='.$review->book_id);?>"><?php echo $review->book_title; ?> </a> <br>
+		               				<a href="<?= site_url('front/bookdetail_controller/?id='.$review->book_id);?>"><?php echo $review->book_title; ?> </a> <br>
 		               				<b>Title : </b>
 		               				<?php echo $review->title;?> <br>
 		               				<b>Comment : </b>
@@ -101,11 +128,17 @@
       				 Wishlist
     			</div>
 	    		<div class="panel-body">
+	    			<?php if (count($wishlist) == 0){?>
 	        		No wishlist found
+	        	<?php }else{
+	        		foreach ($wishlist as $w): ?>
 
-	        		<?php foreach ($wishlist as $w): ?>
-	        			<li><?php echo $w->book_title; ?></li>
-	        		<?php endforeach ?>
+	        			<li><a href="<?=site_url('front/bookdetail_controller/?id='.$w->book_id);?>')"> <?php echo $w->book_title; ?></a>
+	        				<div title="Delete from wishlist" class="delete"><i class="fa fa-trash"></i></div>
+	        		<input type="hidden" class="book_id" value="<?=$w->book_id;?>">
+	        			</li>
+	        		<?php endforeach;
+	        	}?>
 	    		</div>
 			</div>
   		</div> <!-- End of Wishlist-->
@@ -116,8 +149,21 @@
 
 	        
 
-</section>
 
 <?php 
     $this->load->view('front/footer.php');
 ?>
+
+</section>
+<script type="text/javascript">
+	$('.delete').on('click',function(){
+                            var book_id = $('.book_id').val();
+                            $.post("<?php echo site_url('front/wishlist_controller/delete')?>",{book_id: book_id})
+                            .done(function(data){
+                                    alert('Deleted from wishlist.');
+                            }).fail(function(){
+                                alert('fail');
+                            });
+                        });
+
+</script>

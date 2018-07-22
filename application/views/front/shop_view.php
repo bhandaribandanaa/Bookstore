@@ -128,12 +128,13 @@ _________________________________________________________ -->
 
                         <div class="pages">
 
-                            <p class="loadMore">
-                                <a href="#" class="btn btn-template-main"><i class="fa fa-chevron-down"></i> Load more</a>
-                            </p>
+                           
 
                             <ul class="pagination">
-                                <li><a href="#">&laquo;</a>
+
+                                <?php if(isset($links)) ?>
+                                <li class="page-link"><?php echo $links; ?></li>
+                               <!--  <li><a href="#">&laquo;</a>
                                 </li>
                                 <li class="active"><a href="#">1</a>
                                 </li>
@@ -146,7 +147,7 @@ _________________________________________________________ -->
                                 <li><a href="#">5</a>
                                 </li>
                                 <li><a href="#">&raquo;</a>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
 

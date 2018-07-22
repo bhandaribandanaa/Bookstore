@@ -18,7 +18,7 @@
                     <div class="col-md-5">
                         <ul class="breadcrumb">
 
-                            <li><a href="<?=site_url('front/shop_controller');?>">Home</a>
+                            <li><a href="<?=site_url('front/shop_controller/view');?>">Home</a>
                             </li>
                             <li>My account</li>
                         </ul>

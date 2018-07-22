@@ -48,12 +48,14 @@ class customerview_model extends CI_Model {
 
         } 
 
-        public function view_wishlist($id)
+        public function view_wishlist($cus_id)
         {
+            // echo $cus_id;
+            // die();
             $this->db->select('*');
             $this->db->from('customer c');
             $this->db->join('wishlist w', 'c.id = w.cus_id');
-            $this->db->where('c.id',$id);
+            $this->db->where('w.cus_id', $cus_id);
             $query= $this->db->get();
 
             foreach($query->result() as $row)
@@ -63,9 +65,10 @@ class customerview_model extends CI_Model {
                 // $book[] = $id;
                 // add each user id to the array
             }
-            //print_r($array);
+            // die();
            //$array = implode(',', $array);
-            $this->db->select('book_title');
+
+            $this->db->select('*');
             $this->db->from('book_detail');
             $this->db->where_in('book_id', $array);
             $query1 = $this->db->get();
@@ -75,6 +78,24 @@ class customerview_model extends CI_Model {
 
 
 
+        }
+
+        public function view_orders($id)
+        {
+            $array[]= 0 ;
+           $this->db->select('*');
+            $this->db->from('book_detail b');
+            $this->db->join('book_order or', 'or.book_id = b.book_id');
+            $this->db->where('or.cus_id',$id);
+            $query= $this->db->get();
+
+            foreach($query->result() as $row)
+            {
+                $array[] = $row; // add each user id to the array
+            }
+            // print_r($array);
+            // die();
+            return $array;
         }
 
 }

@@ -1,5 +1,6 @@
 <?php 
     $this->load->view('front/header.php');
+//
 ?>
 
 
@@ -7,7 +8,6 @@
                                 
 
 
-<script src='https://www.google.com/recaptcha/api.js'></script>
 
         <div id="heading-breadcrumbs">
             <div class="container">
@@ -18,7 +18,7 @@
                     <div class="col-md-5">
                         <ul class="breadcrumb">
 
-                            <li><a href="<?=site_url('front/shop_controller');?>">Home</a>
+                            <li><a href="<?=site_url('front/shop_controller/view');?>">Home</a>
                             </li>
                             <li>My account</li>
                         </ul>
@@ -41,7 +41,7 @@
                                 <h3 class="text-uppercase">Change Information</h3>
                             </div>
 
-<form role="form" action="<?=site_url('front/change_controller/updateuserinfo')?>" method="POST" enctype="multipart/form-data">
+<form role="form" id="changeUser" action="<?=site_url('front/change_controller/updateuserinfo') ?>" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label>FullName:</label>
                         <input type="text" class="form-control" name="fullname" id="fullname"  value="<?php echo $records->fullname;?>" required>
@@ -78,12 +78,12 @@
                     <input type="hidden" name="token" id="token" value="<?php echo $records->token;?>">
                     <input type="hidden" name="id" value="<?php echo $records->id;?>">
                     <div class="form-group">
-                        <div class="g-recaptcha" data-sitekey="6LeHBWMUAAAAAI6E4vNdle8MRIZC80FynBElI61n"></div>
+                        <div id="example1" ></div>
                     </div>
                     
+                    <!-- <input type="hidden" id="validcaptcha" name="validcaptcha" value=""> -->
 
-
-                    <button type="submit" name='update' value="UPDATE" class="btn btn-primary">UPDATE</button>
+                    <button type="button" name='update' id="testbtn" value="UPDATE" class="btn btn-primary">UPDATE</button>
 
                 </form>
 
@@ -101,9 +101,41 @@
         ?>
 <!--_________________________________________________________ -->
 
-        
+     <script type="text/javascript">
+     //javascript:alert(grecaptcha.getResponse(widgetId1));
+   /*  function verifyCallback(response)
+     {
+        if(response)
+        {
+            
+            $('#validcaptcha').val('valid');
+        }
+        else
+        {
+            $('#validcaptcha').val('invalid');
+        }
+     }*/
+     $('#testbtn').click(function(){
+        if(grecaptcha.getResponse(widgetId1))
+        {
+            //alert('valid');
+            $('#changeUser').submit();
+        }
+        else
+        {
+            alert('Invalid Captcha');
+        }
+     });
+      var onloadCallback = function() {
+        widgetId1 = grecaptcha.render('example1', {
+          'sitekey' : '6LeHBWMUAAAAAI6E4vNdle8MRIZC80FynBElI61n',
+          'theme' : 'light',
+          'callback' : verifyCallback,
+        });
+      };
+    </script>   
 
-
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 
 </body>
 

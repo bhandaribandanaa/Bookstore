@@ -87,7 +87,7 @@ _________________________________________________________ -->
                     <div class="container">
                         <div class="navbar-header">
 
-                            <a class="navbar-brand home" href="<?=site_url('front/shop_controller');?>">
+                            <a class="navbar-brand home" href="<?=site_url('front/shop_controller/view/view');?>">
                                 <img src="<?=site_url('assets/img/logo.png');?>" alt="Our Logo" class="hidden-xs hidden-sm" height="180%">
                                 
                             </a>
@@ -104,7 +104,7 @@ _________________________________________________________ -->
 
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown active">
-                                    <a href="<?=site_url('front/shop_controller');?>" class="dropdown-toggle" >Home <b></b></a>
+                                    <a href="<?=site_url('front/shop_controller/view/view');?>" class="dropdown-toggle" >Home <b></b></a>
                                 </li>
                                 <?php if(!is_userlogin())
                                 {?>

@@ -131,7 +131,7 @@ $this->load->view('front/header');
 
                                 <div class="box-footer">
                                     <div class="pull-left">
-                                         <a href="<?=site_url('front/shop_controller');?>" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
+                                         <a href="<?=site_url('front/shop_controller/view');?>" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
                                     </div>
                                     <div class="pull-right">
                                         <button class="btn btn-default" href="">Update cart</button>

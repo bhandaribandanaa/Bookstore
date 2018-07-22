@@ -63,7 +63,7 @@
             _________________________________________________________ -->
 
                     <div class="col-md-9">
-                        <p class="goToDescription"><a href="<?=site_url('front/shop_controller');?>" class="scroll-to text-uppercase">Go back to browsing other books.</a>
+                        <p class="goToDescription"><a href="<?=site_url('front/shop_controller/view');?>" class="scroll-to text-uppercase">Go back to browsing other books.</a>
                         </p>
 
                         <div class="row" id="productMain">
@@ -345,6 +345,7 @@ _________________________________________________________ -->
                                 });
                         });
                          */
+                         
                         $('#save').on('click',function(){
                             var book_id = $('#book_id').val();
                             $.post("<?php echo site_url('front/wishlist_controller/add')?>",{book_id: book_id})

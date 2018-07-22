@@ -31,7 +31,7 @@ class Customer_controller extends CI_Controller {
           		}	
          
 		if($data){
-			redirect(site_url('front/shop_controller'),'refresh');
+			redirect(site_url('front/shop_controller/view'),'refresh');
 		}else{
 			$this->session->set_flashdata('Error Registering', TRUE);
 			redirect(site_url('front/customer_register_view'),'refresh');

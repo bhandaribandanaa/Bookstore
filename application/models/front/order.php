@@ -10,9 +10,10 @@ class Order extends CI_Model {
 				foreach ($cart as $item):
 					$data['book_id'] = $item['id'];
 					$data['quantity'] = $item['qty'];
-					$data['user_id'] = $this->session->userdata('id');
+					$data['cus_id'] = $this->session->userdata('id');
 				    $data['total_amount']  = $item['price'] * $item['qty'];
-				    $q = $this->db->insert("bookorder",$data);
+				    $data['status'] = 'In Progress';
+				    $q = $this->db->insert("book_order",$data);
 				    
 				    $this->db->where('book_id', $item['id']);
 				    $result = $this->db->get('book_detail')->row();
@@ -24,6 +25,15 @@ class Order extends CI_Model {
 				endforeach;
 
 				return $q;
+	}
+
+	public function cancelorder($order_id)
+	{
+		$data = array(
+        'status' => "Canceled"
+		);
+		$this->db->where('or_id', $order_id);
+		return $this->db->update('book_order', $data);
 	}
 
 }

@@ -31,9 +31,16 @@ public function save($cus_id)
     }
 	
 
-public function delete()
+public function delete($cus_id)
 {
-	# code...
+	$book_id = $this->input->post('book_id');
+    // echo $book_id;
+    // die();
+    $this->db->where('book_id',$book_id);
+    $this->db->where('cus_id',$cus_id);
+    $query = $this->db->delete('wishlist');
+    return $query;
+
 }
 }
 
