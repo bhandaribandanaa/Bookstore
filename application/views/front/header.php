@@ -126,6 +126,9 @@ _________________________________________________________ -->
                                 <li class="dropdown active">
                                     <a href="<?=site_url('front/customer_controller');?>" class="dropdown-toggle" >Register/Login<b></b></a>
                                 </li>
+                                <li class="dropdown active">
+                                    <a href="<?=site_url('front/help_controller');?>" class="dropdown-toggle" >Need help <b></b></a>
+                                </li>
                                 <?php } ?>
                                 
                                 <!-- ========== FULL WIDTH MEGAMENU ================== -->
@@ -133,12 +136,13 @@ _________________________________________________________ -->
                                 <!-- ========== FULL WIDTH MEGAMENU END ================== -->
 
                                 <li class="dropdown active">
-                                    <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown">Team Member <b class="caret"></b></a>
+                                    <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown">ABOUT US <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="<?=site_url('front/about_controller')?>">About Us</a>
                                         </li>
                                         <li><a href="<?=site_url("front/ourteam_controller")?>">Our Team</a>
-                                        </li>                                      
+                                        </li>   
+                                                                          
 
                                     </ul>
                                 </li>

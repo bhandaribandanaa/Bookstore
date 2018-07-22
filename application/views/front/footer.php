@@ -1,11 +1,51 @@
  <div id="copyright">
             <div class="container">
-                <div class="col-md-12">
-                    <p class="pull-left">&copy; 2017. Online Book Store</p>
-                    <p class="pull-right">Template by <a href="https://bootstrapious.com">Bootstrapious</a> & <a href="https://remoteplease.com">Remote Please</a>
-                         <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
-                    </p>
+                <div class="row">
+                <div class="col-md-4">
+                    <div>
+                    <h4><a href="<?=site_url('front/about_controller')?>">About Us</a></h4>
+                    <p style="text-align: justify;">Online Book Store is a web application which is mainly concentrated on systematizing today’s current long and manual process of buying books by using computerized web system. The Online Books Store is a website that facilitates access to books of various categories over the Internet. It also aims to....</p>
+                    <p><a href="<?=site_url('front/about_controller')?>">Read More>></a></p>
+                </div>
+           </div>
+           
+             <div class="col-md-4">
+                 <div>
+                    <h4><a href="<?=site_url('front/about_controller')?>">Contact Info</a></h4>
+                <address>
+                    <p>Online Book Store Pvt. Ltd.<br>
+                        <span style="line-height:1.6em;">
+                            Kathmandu,<br>
+                            Nepal&nbsp;<br>
+                            Contact Us:&nbsp;<br>
+                        </span>
+                        9849467232, 9842566335, 9841464628<br>
+                         <span style="line-height:1.6em;">Email:interfacebookstore@gmail.com
+                         </span>
+                     </p>
+                 </address>
+             </div>
+         </div>
+             <div class="col-md-4">
+                 <div>
+                     <h4><a href="<?=site_url('front/about_controller')?>">Terms And Conditons</a></h4>
+                
+                <ul>
+                    <li><a href="<?=site_url('front/term_controller')?>">Terms of Payment</a></li>
+                    <li><a href="<?=site_url('front/return_controller')?>">Return Conditions</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
+
+
+                   <!--  <p class="pull-left" style="font-size:14px"><b>Email:</b>&nbsp;&nbsp;interfacebookstore@gmail </p>
+                    <p style="font-size:14px"><b>Phone:</b>&nbsp;&nbsp; +9779849467232, +9779842566335, +9779841464628 </p>
+                    
+                    <p class="pull-right">Template by <a href="https://bootstrapious.com">Bootstrapious</a> & <a href="https://remoteplease.com">Remote Please</a> -->
+                         <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
+                    
                 </div>
             </div>
         </div>
@@ -15,7 +55,7 @@
 
 
 
-    </div>
+   
     <!-- /#all -->
 
 

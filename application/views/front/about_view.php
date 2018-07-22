@@ -19,8 +19,7 @@
                         <ul class="breadcrumb">
                             <li><a href="index.html">Home</a>
                             </li>
-                            <li><a href="ourteam_controller">Team member</a>
-                            </li>
+                            
                             <li>About Us</li>
                         </ul>
 
@@ -54,6 +53,14 @@
                              <p>Online Book Store is very much important for those people who are fond of reading books. It also helps speeding up the transaction and make the management of books from various sources user friendly. It also helps in the process or management of keeping the record of user who have either purchased or pre-ordered the book.</p>
 
                             <p>In today’s time people are more into use of internet to get information rather than directly going to the place and getting information. So, it is important for our country to keep up with the development to enjoy its benefits to the maximum. </p>
+                               
+                            <p>Shoppers no longer have to wait in traffic, bargain for discount and spend hours looking for the products and services that they want. All it takes is a few clicks and a few seconds to locate and to place order(s). Home deliveries are mostly free inside Kathmandu valley and a small surcharge is added for orders outside valley. Returns and exchanges are guaranteed within the specified time period.</p>
+
+                            <p>We find it enthralling to see shoppers from every nook and corner of Nepal placing their orders. At absolutely zero marketing cost, businesses can reach millions of customers. That's the power of ecommerce. And we find it exhilarating to be leading the industry.</p>
+
+
+                            <p>Happy book shopping! ─ Team Online Book Store</p>
+
 
                             <p>Please feel free to contact us, our customer service center is working for you 24/7.</p>
 
