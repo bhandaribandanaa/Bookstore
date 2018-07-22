@@ -19,7 +19,7 @@
     <title>Online Book Store</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
-    <meta name="author" content="arya, bandana, sajja, mihika, manita,">
+    <meta name="author" content="arya, bandana, sajja,sankita, manita,">
 
     <!-- The styles -->
     <link id="bs-css" href="<?= site_url('css/bootstrap-cerulean.min.css') ?>" rel="stylesheet">
@@ -78,7 +78,7 @@
             <!-- user dropdown ends -->
 
             <!-- theme selector starts -->
-             <div class="btn-group pull-right theme-container animated tada">
+             <!-- <div class="btn-group pull-right theme-container animated tada">
                 <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                     <i class="glyphicon glyphicon-cog"></i><span
                         class="hidden-sm hidden-xs"> Settings</span>
@@ -89,13 +89,13 @@
                     <li><a href="http://localhost/interface-bookstore/admin/change_controller/changeusername/?id=<?= $this->session->userdata('adminid'); ?>">Change Username</a></li>
                     <li><a href="http://localhost/interface-bookstore/admin/change_controller/changepassword/?id=<?= $this->session->userdata('adminid'); ?>">Change Password</a></li>
                 </ul>
-            </div>
+            </div> -->
             <!-- t
             <!-- theme selector ends -->
 
             <ul class="collapse navbar-collapse nav navbar-nav top-menu">
                 <li><a href="#"><i class="glyphicon glyphicon-globe"></i> Visit Site</a></li>
-                <li class="dropdown">
+                <!-- <li class="dropdown">
                     <a href="#" data-toggle="dropdown"><i class="glyphicon glyphicon-star"></i> Dropdown <span
                             class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
@@ -107,12 +107,12 @@
                         <li class="divider"></li>
                         <li><a href="#">One more separated link</a></li>
                     </ul>
-                </li>
+                </li> -->
                 <li>
-                    <form class="navbar-search pull-left">
+                    <!-- <form class="navbar-search pull-left">
                         <input placeholder="Search" class="search-query form-control col-md-10" name="query"
                                type="text">
-                    </form>
+                    </form> -->
                 </li>
             </ul>
 

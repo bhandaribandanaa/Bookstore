@@ -81,7 +81,7 @@ _________________________________________________________ -->
                                     </div> 
                                     <div class="form-group">
                                     <label for="name-login">Phone:</label>
-                                    <input type="text" class="form-control" name="phone" id="phone" required>
+                                    <input type="number" class="form-control" name="phone" id="phone" required>
                                     </div> 
                                     <div class="form-group">
                                     <label for="name-login">Image:</label>
@@ -102,6 +102,9 @@ _________________________________________________________ -->
                                 <label for="email">Email:</label>
                                 <input type="email" class="form-control" name="email" id="email" required>
                                 </div>
+                                  <div class="form-group">
+                        <div class="g-recaptcha" data-sitekey="6LeHBWMUAAAAAI6E4vNdle8MRIZC80FynBElI61n"></div>
+                    </div>
                                     <input type="hidden" name="resetpassword" id="resetpassword" value="0">
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-template-main" name='add' value="ADD CATEGORY"><i class="fa fa-user-md"></i> Register</button>

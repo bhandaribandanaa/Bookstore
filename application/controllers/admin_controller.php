@@ -3,12 +3,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class admin_controller extends CI_Controller{
 	
 	public function index(){
-		$this->load->view('admin_view');
+		// $this->load->view('admin_view');
 		$data['records']=$this->viewuser();
 		$this->load->view('admintable_view',$data);
 		// $this->load->view('search_view',$data);
 		// $this->load->view('',$data);
 		// $data['results']=$this->search();
+		$this->form_validation->set_rules('name','Name','trim|required');
+		$this->form_validation->set_rules('captcha','captcha','trim|required');
+ 
+    if($this->form_validation->run()===FALSE)
+    {
+      $this->load->view('admin_view');
+    }
+    else
+    {
+      echo 'passed';
+    }
 		 }
 	public function adduser(){
 		$this->load->model('admin_model');
@@ -65,4 +76,29 @@ class admin_controller extends CI_Controller{
         // Pass the results to the view.
         $this->load->view('search_view',$data);
     }
+    public function recaptcha($str='')
+  {
+  	$google_url="https://www.google.com/recaptcha/api/siteverify";
+    $secret='6LeHBWMUAAAAAEu4dB5OzZxgEA9-2sMULeNf7-Ej';
+    $ip=$_SERVER['REMOTE_ADDR'];
+    $url=$google_url."?secret=".$secret."&response=".$str."&remoteip=".$ip;
+    // $curl = curl_init();
+    // curl_setopt($curl, CURLOPT_URL, $url);
+    // curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    // curl_setopt($curl, CURLOPT_TIMEOUT, 10);
+    // $res = curl_exec($curl);
+    // curl_close($curl);
+    $data= json_decode($url);
+
+    if(isset($data->success)&&$data->success="true")
+    {
+      echo "success";
+    }
+    else
+    {
+    	echo "please fill captcha";
+      // $this->form_validation->set_message('recaptcha', 'The reCAPTCHA field is telling me that you are a robot. Shall we give it another try?');
+      // return FALSE;
+    }
+  }
 }

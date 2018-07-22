@@ -19,14 +19,12 @@
 
 ?> 
 </form>
-      <form method="POST" action="http://localhost/interface-bookstore/index.php/admin_controller/adduser"/>
-     <!--  Username:    <input type="text" name="name" id="name" placeholder="enter your name" /><br/><br/>
+      <form method="POST" action="http://localhost/interface-bookstore//admin_controller/recaptcha"/>
+      Username:    <input type="text" name="name" id="name" placeholder="enter your name" /><br/><br/>
       password:    <input type="text" name="password" id="password" placeholder="enter your password" /><br/><br/>
-      <input type="submit" name="submit" value="Login"/> -->
-<!--  <input type="text" name="title" id="title" />   -->
-       <!--  <input type="submit" name="submit" value="search" /> -->
-         
-      </center>  
+     <div class="g-recaptcha" data-sitekey="6LdmimUUAAAAAEu00_LJIlL9EG12_nwioFiekmuh"></div>
+      <input type="submit" name="submit" value="Login"/>
+
 
  </form>
    </body>

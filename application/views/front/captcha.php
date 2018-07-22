@@ -7,7 +7,7 @@
 <body>
 	<?php
   echo '<h1>The form</h1>';
-  echo form_open();
+  echo form_open('captcha_controller/recaptcha');
   echo form_label('Name:','name').'<br />';
   echo form_error('name','<div style="color:red;">','</div>');
   echo form_input('name',set_value('name')).'<br />';

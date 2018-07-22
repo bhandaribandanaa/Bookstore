@@ -53,6 +53,21 @@ _________________________________________________________ -->
             <div id="top">
                 <div class="container">
                     <div class="row">
+                    	  <div> 
+                            <form method="POST" action="http://localhost/interface-bookstore/front/search_controller/search"/>
+                            <div class="input-group">
+                            <input type='text' name='search' placeholder="Search for book title, author, isbn, etc.">
+                            <button type="submit"   class="btn btn-xs btn-template-main" title='search'><i class="fa fa-search"></i></button>
+                        </div>
+                           <!--  <?php
+                            // echo form_open('search_controller/search');
+
+                            // echo form_input(array('name'=>'search'));
+
+                            // echo form_submit('search_submit','Search');
+                            ?>  -->
+                             </form>
+                        </div>
                         <div class="col-xs-5 contact">
                             <p class="hidden-md hidden-lg"><a href="#" data-animate-hover="pulse"><i class="fa fa-phone"></i></a>  <a href="#" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
                             </p>
@@ -111,6 +126,9 @@ _________________________________________________________ -->
                                 <li class="dropdown active">
                                     <a href="<?=site_url('front/customer_controller');?>" class="dropdown-toggle" >Register/Login<b></b></a>
                                 </li>
+                                <li class="dropdown active">
+                                    <a href="<?=site_url('front/help_controller');?>" class="dropdown-toggle" >Need help <b></b></a>
+                                </li>
                                 <?php } ?>
                                 
                                 <!-- ========== FULL WIDTH MEGAMENU ================== -->
@@ -118,12 +136,13 @@ _________________________________________________________ -->
                                 <!-- ========== FULL WIDTH MEGAMENU END ================== -->
 
                                 <li class="dropdown active">
-                                    <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown">Team Member <b class="caret"></b></a>
+                                    <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown">ABOUT US <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="<?=site_url('front/about_controller')?>">About Us</a>
                                         </li>
                                         <li><a href="<?=site_url("front/ourteam_controller")?>">Our Team</a>
-                                        </li>                                      
+                                        </li>   
+                                                                          
 
                                     </ul>
                                 </li>
