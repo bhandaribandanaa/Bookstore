@@ -55,7 +55,7 @@ class Customer_controller extends CI_Controller {
 				$this->session->set_userdata( $data );
 
 				//redirecting to dashboard after succesful login
-				redirect(site_url('front/customerview_controller/?id='.$data['id']),'refresh');
+				redirect(site_url('front/shop_controller/view'),'refresh');
 				exit();
 			}
 			else
@@ -92,6 +92,30 @@ class Customer_controller extends CI_Controller {
 					die();
 				}
         }
+       public function recaptcha($str='')
+  {
+  	$google_url="https://www.google.com/recaptcha/api/siteverify";
+    $secret='6LeHBWMUAAAAAEu4dB5OzZxgEA9-2sMULeNf7-Ej';
+    $ip=$_SERVER['REMOTE_ADDR'];
+    $url=$google_url."?secret=".$secret."&response=".$str."&remoteip=".$ip;
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_URL, $url);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curl, CURLOPT_TIMEOUT, 10);
+    $res = curl_exec($curl);
+    curl_close($curl);
+    $res= json_decode($res, true);
+
+    if($res['success'])
+    {
+      return TRUE;
+    }
+    else
+    {
+      $this->form_validation->set_message('recaptcha', 'The reCAPTCHA field is telling me that you are a robot. Shall we give it another try?');
+      return FALSE;
+    }
+  }
 }
 
 /* End of file customer.php */

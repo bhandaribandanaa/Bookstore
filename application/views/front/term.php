@@ -20,7 +20,7 @@
                             <li><a href="index.html">Home</a>
                             </li>
                             
-                            <li>Terms of Payment_</li>
+                            <li>Terms of Payment</li>
                         </ul>
 
                     </div>

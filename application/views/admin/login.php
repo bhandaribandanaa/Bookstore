@@ -45,7 +45,7 @@
                     Invalid Username or Password.
                 </div>
             <?php } ?>
-            <form class="form-horizontal" action="<?= site_url('admin/login/validate_user');?>" method="post">
+            <form class="form-horizontal" id="login" action="<?= site_url('admin/login/validate_user');?>" method="post">
                 <fieldset>
                     <div class="input-group input-group-lg">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>
@@ -59,7 +59,10 @@
                     </div>
                     <div class="clearfix"></div>
                     <p class="center col-md-5">
-                        <button type="submit" class="btn btn-primary">Login</button>
+
+                          <center><div class="form-group">
+                        <div id="example1" ></div></center>
+                        <button type="submit" id="loginadmin" class="btn btn-primary">Login</button>
                         <input type="hidden" name="login" value="LOGIN">
                     </p>
                 </fieldset>
@@ -77,6 +80,43 @@
 
 <!-- application script for Charisma demo -->
 <script src="js/charisma.js"></script>
+
+<script type="text/javascript">
+     //javascript:alert(grecaptcha.getResponse(widgetId1));
+   /*  function verifyCallback(response)
+     {
+        if(response)
+        {
+            
+            $('#validcaptcha').val('valid');
+        }
+        else
+        {
+            $('#validcaptcha').val('invalid');
+        }
+     }*/
+     $('#loginadmin').click(function(){
+        if(grecaptcha.getResponse(widgetId1))
+        {
+            //alert('valid');s
+            $('#login').submit();
+        }
+        else
+        {
+            alert('Invalid Captcha');
+        }
+     });
+      var onloadCallback = function() {
+        widgetId1 = grecaptcha.render('example1', {
+          'sitekey' : '6LeHBWMUAAAAAI6E4vNdle8MRIZC80FynBElI61n',
+          'theme' : 'light',
+          // 'callback' : verifyCallback,
+        });
+      };
+    </script>   
+
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+
 
 
 </body>

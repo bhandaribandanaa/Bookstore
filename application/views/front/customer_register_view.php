@@ -70,7 +70,7 @@ _________________________________________________________ -->
 
                             <hr>
 
-                            <form action="<?=site_url('front/customer_controller/customer_register')?>" method="post" enctype="multipart/form-data">
+                            <form  id="register" action="<?=site_url('front/customer_controller/customer_register')?>" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="name-login">Name</label>
                                     <input type="text" class="form-control" name="fullname" id="fullname" required>
@@ -102,12 +102,15 @@ _________________________________________________________ -->
                                 <label for="email">Email:</label>
                                 <input type="email" class="form-control" name="email" id="email" required>
                                 </div>
-                                  <div class="form-group">
+                                <!--   <div class="form-group">
                         <div class="g-recaptcha" data-sitekey="6LeHBWMUAAAAAI6E4vNdle8MRIZC80FynBElI61n"></div>
-                    </div>
+                    </div> -->
                                     <input type="hidden" name="resetpassword" id="resetpassword" value="0">
+                                     <div class="form-group">
+                        <div id="example1" ></div>
+                    </div>
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-template-main" name='add' value="ADD CATEGORY"><i class="fa fa-user-md"></i> Register</button>
+                                    <button type="submit" id="testbtn" class="btn btn-template-main" name='add' value="ADD CATEGORY"><i class="fa fa-user-md"></i> Register</button>
                                 </div>
                             </form>
                         </div>
@@ -176,6 +179,41 @@ _________________________________________________________ -->
     ?>
 
 
+<script type="text/javascript">
+     //javascript:alert(grecaptcha.getResponse(widgetId1));
+   /*  function verifyCallback(response)
+     {
+        if(response)
+        {
+            
+            $('#validcaptcha').val('valid');
+        }
+        else
+        {
+            $('#validcaptcha').val('invalid');
+        }
+     }*/
+     $('#testbtn').click(function(){
+        if(grecaptcha.getResponse(widgetId1))
+        {
+            //alert('valid');s
+            $('#register').submit();
+        }
+        else
+        {
+            alert('Invalid Captcha');
+        }
+     });
+      var onloadCallback = function() {
+        widgetId1 = grecaptcha.render('example1', {
+          'sitekey' : '6LeHBWMUAAAAAI6E4vNdle8MRIZC80FynBElI61n',
+          'theme' : 'light',
+          // 'callback' : verifyCallback,
+        });
+      };
+    </script>   
+
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 
 </body>
 

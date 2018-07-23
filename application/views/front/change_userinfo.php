@@ -1,15 +1,8 @@
 <?php 
     $this->load->view('front/header.php');
 //
-?>
-
-
-   
-                                
-
-
-
-        <div id="heading-breadcrumbs">
+?>                  
+       <div id="heading-breadcrumbs">
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
@@ -81,7 +74,7 @@
                         <div id="example1" ></div>
                     </div>
                     
-                    <!-- <input type="hidden" id="validcaptcha" name="validcaptcha" value=""> -->
+                   <!--  <input type="hidden" id="validcaptcha" name="validcaptcha" value=""> -->
 
                     <button type="button" name='update' id="testbtn" value="UPDATE" class="btn btn-primary">UPDATE</button>
 
@@ -118,7 +111,7 @@
      $('#testbtn').click(function(){
         if(grecaptcha.getResponse(widgetId1))
         {
-            //alert('valid');
+            //alert('valid');s
             $('#changeUser').submit();
         }
         else
@@ -130,7 +123,7 @@
         widgetId1 = grecaptcha.render('example1', {
           'sitekey' : '6LeHBWMUAAAAAI6E4vNdle8MRIZC80FynBElI61n',
           'theme' : 'light',
-          'callback' : verifyCallback,
+          // 'callback' : verifyCallback,
         });
       };
     </script>   

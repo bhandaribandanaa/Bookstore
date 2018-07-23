@@ -85,6 +85,10 @@ $this->load->view('admin/common/sidebar');
                         <input type="text" class="form-control" name="username" id="username"  value="<?php echo $records->username;?>" readonly>
                     </div> 
                     <div class="form-group">
+                        <label for="exampleInputEmail1"> Old Password:</label>
+                        <input type="password" class="form-control" patjtern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Password Must Contain Atleast (UpperCase, LowerCase and Number)" name="password" id="password"   required>
+                    </div> 
+                    <div class="form-group">
                         <label for="exampleInputEmail1"> New Password:</label>
                         <input type="password" class="form-control" patjtern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Password Must Contain Atleast (UpperCase, LowerCase and Number)" name="password" id="password"   required>
                     </div> 

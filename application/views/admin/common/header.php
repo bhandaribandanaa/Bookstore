@@ -58,8 +58,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"> <img alt="Online BookStore" src="img/logo20.png" class="hidden-xs"/>
-                <span>BookStore</span></a>
+            <a class="navbar-brand" href="http://localhost/interface-bookstore/admin/dashboard"> <img  src="<?=site_url('assets/img/logo.png');?>" height="180%" class="hidden-xs"/>
+                </a>
 
             <!-- user dropdown starts -->
             <div class="btn-group pull-right">
@@ -94,7 +94,7 @@
             <!-- theme selector ends -->
 
             <ul class="collapse navbar-collapse nav navbar-nav top-menu">
-                <li><a href="#"><i class="glyphicon glyphicon-globe"></i> Visit Site</a></li>
+                <li><a href="http://localhost/interface-bookstore/front/shop_controller/view" target="_blank"><i class="glyphicon glyphicon-globe"></i> Visit Site</a></li>
                 <!-- <li class="dropdown">
                     <a href="#" data-toggle="dropdown"><i class="glyphicon glyphicon-star"></i> Dropdown <span
                             class="caret"></span></a>

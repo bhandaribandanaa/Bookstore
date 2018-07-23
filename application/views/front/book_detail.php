@@ -101,18 +101,12 @@
                                             <h3><?php echo $records['book_title'];?></h3>
                                             
                                         </div>
-                                        <div class="product-social">
-                                            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Check out this book available " data-via="interfacebookstore" data-hashtags="books" data-lang="en" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                                            <!-- facebook -->
-                                            <a href="http://www.facebook.com/sharer.php?u=http://localhost/interface-bookstore/front/bookdetail_controller/?id=<?php echo $records['book_title'];?>" target="_blank"><i class="fa fa-facebook-square"></i></a>
-                                        </div>
+                                      
                                         <!-- gplus -->
-                                        <a href="https://plus.google.com/share?url=http://localhost/interface-bookstore/front/bookdetail_controller/?id=<?php echo $records['book_title'];?>" onclick="javascript:window.open(this.href,
-  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img
-  src="https://www.gstatic.com/images/icons/gplus-64.png" alt="Share on Google+"/></a>
+                                        
 
                                     <!-- pinterest-->
-                                    <a href ="http://pinterest.com/pin/create/button/?url=http://localhost/interface-bookstore/front/bookdetail_controller/?id=<?php echo $records['book_id'];?>&media=<?= site_url('uploads/bookdetail/'.$records['image']);?>" alt="<?= site_url('uploads/bookdetail/'.$records['image']);?>" ></a>
+                                   
 
 
                                         <p class="price">Rs. <?php echo $records['price'];?></p>

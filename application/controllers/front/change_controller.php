@@ -102,8 +102,7 @@ class change_controller extends CI_Controller{
 				$this->session->set_flashdata('Error Registering', TRUE);
 				redirect(site_url('front/change_controller/changeuserpicture/?id='.$id),'refresh');
 				exit();
-			}
-		
+			}	
 	}
 
 	public function upload_file()
@@ -132,10 +131,7 @@ class change_controller extends CI_Controller{
 					die();
 				}
         }
-
-
-public function recaptcha($str='')
-  {
+public function recaptcha($str=''){
   	$google_url="https://www.google.com/recaptcha/api/siteverify";
     $secret='6LeHBWMUAAAAAEu4dB5OzZxgEA9-2sMULeNf7-Ej';
     $ip=$_SERVER['REMOTE_ADDR'];
@@ -159,3 +155,4 @@ public function recaptcha($str='')
     }
   }
 }
+

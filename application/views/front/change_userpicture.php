@@ -2,13 +2,6 @@
     $this->load->view('front/header.php');
 ?>
 
-
-   
-                                
-
-
-
-
         <div id="heading-breadcrumbs">
             <div class="container">
                 <div class="row">
@@ -41,7 +34,7 @@
                                 <h3 class="text-uppercase">Change Information</h3>
                             </div>
 
-<form role="form" action="<?=site_url('front/change_controller/updateuserpicture')?>" method="POST" enctype="multipart/form-data">
+<form   role="form" id="changepicture" action="<?=site_url('front/change_controller/updateuserpicture')?>" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <input type="hidden" class="form-control" name="fullname" id="fullname"  value="<?php echo $records->fullname;?>" required>
                     </div>
@@ -88,9 +81,10 @@
                         <?//php } ?>   
                     </div> 
                     
-
+                        <div class="form-group">
+                        <div id="example1" ></div>
                     <input type="hidden" name="id" value="<?php echo $records->id;?>">
-                    <button type="submit" name='update' value="UPDATE" class="btn btn-primary">UPDATE</button>
+                    <button type="button" id="update" name='update' value="UPDATE" class="btn btn-primary">UPDATE</button>
                     
                 </form>
 
@@ -106,15 +100,7 @@
 <?php
         $this->load->view('front/footer.php')
         ?>
-_________________________________________________________ -->
-
-    
-
-
-
-
-
-     <script>
+<script type="text/javascript">
  
 $(document).on('click', '#close-preview', function(){ 
     $('.image-preview').popover('hide');
@@ -175,7 +161,42 @@ $(function() {
     });  
 });
  
-</script>  -->
+</script>
+<script type="text/javascript">
+     //javascript:alert(grecaptcha.getResponse(widgetId1));
+   /*  function verifyCallback(response)
+     {
+        if(response)
+        {
+            
+            $('#validcaptcha').val('valid');
+        }
+        else
+        {
+            $('#validcaptcha').val('invalid');
+        }
+     }*/
+     $('#update').click(function(){
+        if(grecaptcha.getResponse(widgetId1))
+        {
+            //alert('valid');s
+            $('#changepicture').submit();
+        }
+        else
+        {
+            alert('Invalid Captcha');
+        }
+     });
+      var onloadCallback = function() {
+        widgetId1 = grecaptcha.render('example1', {
+          'sitekey' : '6LeHBWMUAAAAAI6E4vNdle8MRIZC80FynBElI61n',
+          'theme' : 'light',
+          // 'callback' : verifyCallback,
+        });
+      };
+    </script>   
+
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 
 </body>
 
