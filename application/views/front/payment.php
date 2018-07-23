@@ -16,10 +16,44 @@
     $converted_currency=currencyConverter();
 
 ?>
+<div id="content">
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
 
- <div id="text page">
- <section style="text-align: center;">
- 	<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+                        <div class="box" id="order-summary">
+                            <div class="box-header">
+                                <h3>Order summary</h3>
+                            </div>
+                            <p class="text-muted"></p>
+
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Books</td>
+                                            <th><?php echo $total_items; ?></th>
+                                        </tr>
+                                        <tr>
+                                            <td>Total Amount</td>
+                                            <th>Rs. <?php echo $total_amount; ?></th>
+                                        </tr>
+                                        <tr>
+                                            <td>Delivery Charge</td>
+                                            <th>Rs. 50 </th>
+                                        </tr>
+                                        <tr class="total">
+                                            <td>Total</td>
+                                            <th><?php echo $total_amount+50; ?></th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+<!-- paypal -->
+        <div class="box-footer">
+ <div class="pull-left">
+
+    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
         <!-- Identify your business so that you can collect the payments. -->
         <input type="hidden" name="business" value="sankitasigdel-facilator@gmail.com">
         
@@ -30,7 +64,7 @@
         
         <input type="hidden" name="item_name" value="<?php echo $total_items; ?>">
         <input type="hidden" name="item_number" value="qwerty">
-        <input type="hidden" name="amount" value="<?php echo $total_amount/$converted_currency; ?>">
+        <input type="hidden" name="amount" value="<?php echo $total_amount+50/$converted_currency; ?>">
         <input type="hidden" name="currency_code" value="USD">
         <!-- Specify URLs -->
         <input type='hidden' name='cancel_return' value="<?=site_url('front/payment_controller/failure');?>">
@@ -41,8 +75,19 @@
         src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" alt="PayPal - The safer, easier way to pay online">
         <img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
     </form>
- </section>
  </div>
+ </div>
+                        </div>
+
+        </div>
+
+        
+    </div>
+</div>
+</div>
+  
+
+ 
     
 
 <?php 

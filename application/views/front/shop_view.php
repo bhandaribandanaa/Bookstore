@@ -130,11 +130,11 @@ _________________________________________________________ -->
 
                            
 
-                            <ul class="pagination">
+                            
 
-                                <?php if(isset($links)){
-                                    echo $links;
-                                }?>
+                                <?php if(isset($links)){ ?>
+                                    <?php echo $links; ?>
+                                <?php }?>
                                  
                                <!--  <li><a href="#">&laquo;</a>
                                 </li>
@@ -150,7 +150,6 @@ _________________________________________________________ -->
                                 </li>
                                 <li><a href="#">&raquo;</a>
                                 </li> -->
-                            </ul>
                         </div>
 
 

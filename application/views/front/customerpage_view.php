@@ -100,7 +100,9 @@
 		            		</div>
 		            		<div class="tab-pane " id="tab2">
 		               			<p>
-		               			<?php foreach ($reviews as $review) {
+		               			<?php 
+		               			
+		               			foreach ($reviews as $review) {
 		               			
 		               			 ?>
 		               				<b>Book Name : </b>

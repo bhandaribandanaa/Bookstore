@@ -19,8 +19,10 @@ class Customer_controller extends CI_Controller {
         					'required|min_length[5]|max_length[20]|required|is_unique[customer.username]');
 		$this->form_validation->set_rules(
         					'password', 'password',
-        					'required|min_length[5]|max_length[20]|required');
+        					'required|min_length[5]|max_length[20]|callback_password_check|required',
+        					 array('password_check' => 'Password must be a combination of numbers, alphabets & characters.'));
 		$this->form_validation->set_rules('passconf', 'Password Confirmation', 'required|matches[password]');
+		// $this->form_validation->set_message('callback_password_check', 'Your password shoulbe a combination of numbers, alphabets & characters');
 				if ($this->form_validation->run())
                 {
 						$data= $this->customer_model->insert_user($filename,$token);
@@ -116,6 +118,15 @@ class Customer_controller extends CI_Controller {
       return FALSE;
     }
   }
+
+  public function password_check($str)
+		{
+			$pattern = '/[\'\/~`\!@#\$%\^&\*\(\)_\-\+=\{\}\[\]\|;:"\<\>,\.\?\\\]/';
+		   if (preg_match('#[0-9]#', $str) && preg_match('#[a-zA-Z]#', $str) &&preg_match($pattern, $str)) {
+		     return TRUE;
+		   }
+		   return FALSE;
+		}
 }
 
 /* End of file customer.php */
