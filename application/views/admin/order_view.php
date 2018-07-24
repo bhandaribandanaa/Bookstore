@@ -89,6 +89,7 @@ $this->load->view('admin/common/sidebar');
         <th>Book</th>
         <th>Quantity</th>
         <th>Total Amount</th>
+        <th>Payment Method</th>
         <th>Status</th>
         <th>Actions</th>
     </tr>
@@ -107,6 +108,8 @@ $this->load->view('admin/common/sidebar');
         <td><?php echo $o->book_title;?></td>
         <td><?php echo $o->quantity;?></td>
         <td><?php echo $o->total_amount;?></td>
+        <td><?php echo $o->method;?></td>
+
         <td><?php echo $o->status;?></td>
 
         <!-- <form>

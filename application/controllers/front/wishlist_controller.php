@@ -34,12 +34,12 @@ class Wishlist_controller extends CI_Controller {
 	// 	echo json_encode($data);
 	// }
 
-	public function delete()
+	public function delete($id)
 	{
 		$cus_id = $this->session->userdata('id');
 		// echo $cus_id;
-		$data = $this->wishlist_model->delete($cus_id);
-		echo $data;
+		$data = $this->wishlist_model->delete($cus_id,$id);
+		redirect(site_url("front/customerview_controller/?id=".$cus_id),'refresh');
 	}
 
 }

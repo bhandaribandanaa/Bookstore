@@ -1,7 +1,7 @@
  <div id="copyright">
             <div class="container">
                 <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div>
                     <h4><a href="<?=site_url('front/about_controller')?>">About Us</a></h4>
                     <p style="text-align: justify;">Online Book Store is a web application which is mainly concentrated on systematizing today’s current long and manual process of buying books by using computerized web system. The Online Books Store is a website that facilitates access to books of various categories over the Internet. It also aims to....</p>
@@ -9,7 +9,7 @@
                 </div>
            </div>
            
-             <div class="col-md-4">
+             <div class="col-md-3">
                  <div>
                     <h4><a href="<?=site_url('front/about_controller')?>">Contact Info</a></h4>
                 <address>
@@ -20,13 +20,14 @@
                             Contact Us:&nbsp;<br>
                         </span>
                         9849467232, 9842566335, 9841464628<br>
-                         <span style="line-height:1.6em;">Email:interfacebookstore@gmail.com
+                         <span style="line-height:1.6em;">
+                            Email: <a href="#" class="external facebook" data-animate-hover="pulse">interfacebookstore@gmail.com</a>
                          </span>
                      </p>
                  </address>
              </div>
          </div>
-             <div class="col-md-4">
+             <div class="col-md-3">
                  <div>
                      <h4><a href="<?=site_url('front/about_controller')?>">Terms And Conditons</a></h4>
                 
@@ -37,7 +38,18 @@
                 </ul>
             </div>
         </div>
+                <div class="col-md-3">
+                  <div class="social">
+                     <h4><a href="<?=site_url('front/about_controller')?>">Connect With Us</a></h4>
+                
+               <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook" height=800,width=600></i></a>
+                     <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
+                      <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
+                      <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>                         
 
+                  
+            </div>
+        </div>
 
 
                    <!--  <p class="pull-left" style="font-size:14px"><b>Email:</b>&nbsp;&nbsp;interfacebookstore@gmail </p>

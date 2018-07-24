@@ -65,7 +65,7 @@ _________________________________________________________ -->
                             <h2 class="text-uppercase">New account</h2>
 
                             <p class="lead">Not our registered customer yet?</p>
-                            <p>Register as either a customer or a retailer. By registering with us you can buy latest books in a minute!</p>
+                            <p>By registering with us you can buy latest books in a minute!</p>
                             <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a></p>
 
                             <hr>
@@ -105,6 +105,10 @@ _________________________________________________________ -->
                                 <!--   <div class="form-group">
                         <div class="g-recaptcha" data-sitekey="6LeHBWMUAAAAAI6E4vNdle8MRIZC80FynBElI61n"></div>
                     </div> -->
+                    <div class="alert alert-danger">
+                    <?php echo validation_errors();?>
+                </div>
+
                                     <input type="hidden" name="resetpassword" id="resetpassword" value="0">
                                      <div class="form-group">
                         <div id="example1" ></div>

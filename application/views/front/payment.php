@@ -64,7 +64,7 @@
         
         <input type="hidden" name="item_name" value="<?php echo $total_items; ?>">
         <input type="hidden" name="item_number" value="qwerty">
-        <input type="hidden" name="amount" value="<?php echo $total_amount+50/$converted_currency; ?>">
+        <input type="hidden" name="amount" value="<?php echo $total_amount/$converted_currency; ?>">
         <input type="hidden" name="currency_code" value="USD">
         <!-- Specify URLs -->
         <input type='hidden' name='cancel_return' value="<?=site_url('front/payment_controller/failure');?>">
@@ -75,6 +75,7 @@
         src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" alt="PayPal - The safer, easier way to pay online">
         <img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
     </form>
+    <button type="button" class="btn btn-template-main"><a href="<?=site_url('front/payment_controller/getordercod');?>">Click Here</a></button> <b>if you'd prefer Cash On Delivery. (Recommended) </b>
  </div>
  </div>
                         </div>

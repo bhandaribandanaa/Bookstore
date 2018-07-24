@@ -101,18 +101,24 @@
 		            		<div class="tab-pane " id="tab2">
 		               			<p>
 		               			<?php 
-		               			
-		               			foreach ($reviews as $review) {
-		               			
-		               			 ?>
-		               				<b>Book Name : </b>
-		               				<a href="<?= site_url('front/bookdetail_controller/?id='.$review->book_id);?>"><?php echo $review->book_title; ?> </a> <br>
-		               				<b>Title : </b>
-		               				<?php echo $review->title;?> <br>
-		               				<b>Comment : </b>
-		               				<?php echo $review->comment;?> <br> <br> 
-		               				<?php }?> 
-		              			</p>		           
+		               			if(isset($reviews) && !empty($reviews))
+		               			{
+			               			foreach ($reviews as $review) {
+			               			
+			               			 ?>
+			               				<b>Book Name : </b>
+			               				<a href="<?= site_url('front/bookdetail_controller/?id='.$review->book_id);?>"><?php echo $review->book_title; ?> </a> <br>
+			               				<b>Title : </b>
+			               				<?php echo $review->title;?> <br>
+			               				<b>Comment : </b>
+			               				<?php echo $review->comment;?> <br> <br> 
+			               				<?php 
+			               			}
+			               		}else
+			               		{?> 
+			               			no review
+			               		<?php } ?>
+			              			</p>		           
 		            		</div>
 		          		</div>
 		        	</div>
@@ -130,13 +136,13 @@
       				 Wishlist
     			</div>
 	    		<div class="panel-body">
-	    			<?php if (count($wishlist) == 0){?>
+	    			<?php if (!isset($wishlist) || empty($wishlist)){?>
 	        		No wishlist found
 	        	<?php }else{
 	        		foreach ($wishlist as $w): ?>
 
-	        			<li><a href="<?=site_url('front/bookdetail_controller/?id='.$w->book_id);?>')"> <?php echo $w->book_title; ?></a>
-	        				<div title="Delete from wishlist" class="delete"><i class="fa fa-trash"></i></div>
+	        			<li><a href="<?=site_url('front/bookdetail_controller/?id='.$w->book_id);?>"> <?php echo $w->book_title; ?></a>
+	        				<a onclick="return confirm('Do you Want to Delete?')" href="<?php echo site_url('front/wishlist_controller/delete/'.$w->book_id)?>" title="Delete from wishlist" ><i class="fa fa-trash"></i></a>
 	        		<input type="hidden" class="book_id" value="<?=$w->book_id;?>">
 	        			</li>
 	        		<?php endforeach;
@@ -158,7 +164,7 @@
 
 </section>
 <script type="text/javascript">
-	$('.delete').on('click',function(){
+	/*$('.delete').on('click',function(){
                             var book_id = $('.book_id').val();
                             $.post("<?php echo site_url('front/wishlist_controller/delete')?>",{book_id: book_id})
                             .done(function(data){
@@ -166,6 +172,6 @@
                             }).fail(function(){
                                 alert('fail');
                             });
-                        });
+                        });*/
 
 </script>

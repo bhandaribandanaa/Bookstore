@@ -20,28 +20,28 @@
                                 <li><a href="#">Child Menu 2</a></li>
                             </ul>
                         </li> 
-                         <li><a class="ajax-link" href="<?=site_url('admin/book_detail/');?>"><i class="glyphicon glyphicon-eye-open"></i><span> Add BookDetail</span></a>
+                         <li><a class="ajax-link" href="<?=site_url('admin/book_detail/');?>"><i class="glyphicon glyphicon-plus"></i><span> Add BookDetail</span></a>
                         <li><a class="ajax-link" href="<?=site_url('admin/book_detail/viewdetail');?>"><i class="glyphicon glyphicon-eye-open"></i><span> View BookDetail</span></a>
                         </li>
-                       <li><a class="ajax-link" href="<?=site_url('admin/category_controller');?>"><i class="glyphicon glyphicon-eye-open"></i><span> Add bookcategory</span></a>
+                       <li><a class="ajax-link" href="<?=site_url('admin/category_controller');?>"><i class="glyphicon glyphicon glyphicon-plus"></i><span> Add bookcategory</span></a>
                         </li>
-                        <li><a class="ajax-link" href="<?=site_url('admin/category_controller/viewbookcategory');?>"><i class="glyphicon glyphicon-eye-open"></i><span> view bookcategory</span></a>
+                        <li><a class="ajax-link" href="<?=site_url('admin/category_controller/viewbookcategory');?>"><i class="glyphicon glyphicon-eye-open"></i><span> View bookcategory</span></a>
                         </li>
-                        <li><a class="ajax-link" href="<?=site_url('admin/subcategory_controller');?>"><i class="glyphicon glyphicon-eye-open"></i><span> Add book subcategory</span></a>
+                        <li><a class="ajax-link" href="<?=site_url('admin/subcategory_controller');?>"><i class="glyphicon glyphicon glyphicon-plus"></i><span> Add book subcategory</span></a>
                         </li>
                         <li><a class="ajax-link" href="<?=site_url('admin/subcategory_controller/viewbookcategory');?>"><i class="glyphicon glyphicon-eye-open"></i><span> View book subcategory</span></a>
                         </li>
-                        <li><a class="ajax-link" href="<?=site_url('admin/custretailer_controller');?>"><i class="glyphicon glyphicon-eye-open"></i><span>  Add customer/retailer</span></a>
+                        <li><a class="ajax-link" href="<?=site_url('admin/custretailer_controller');?>"><i class="glyphicon glyphicon-plus"></i><span>  Add customer</span></a>
                         </li>
-                        <li><a class="ajax-link" href="<?=site_url('admin/custretailer_controller/viewuser');?>"><i class="glyphicon glyphicon-eye-open"></i><span> view customer/retailer</span></a>
+                        <li><a class="ajax-link" href="<?=site_url('admin/custretailer_controller/viewuser');?>"><i class="glyphicon glyphicon-eye-open"></i><span> View customer</span></a>
                         </li>
-                         <li><a class="ajax-link" href="<?=site_url('admin/ourteam_controller');?>"><i class="glyphicon glyphicon-eye-open"></i><span> Our Team</span></a>
+                         <li><a class="ajax-link" href="<?=site_url('admin/ourteam_controller');?>"><i class="glyphicon glyphicon-plus"></i><span> Our Team</span></a>
                         </li>
-                        <li><a class="ajax-link" href="<?=site_url('admin/ourteam_controller/viewourteam');?>"><i class="glyphicon glyphicon-eye-open"></i><span> view Team</span></a>
+                        <li><a class="ajax-link" href="<?=site_url('admin/ourteam_controller/viewourteam');?>"><i class="glyphicon glyphicon-eye-open"></i><span> View Team</span></a>
                         </li>
-                          <li><a class="ajax-link" href="<?=site_url('admin/slider_controller/');?>"><i class="glyphicon glyphicon-eye-open"></i><span> Add slider</span></a>
-                        <li><a class="ajax-link" href="<?=site_url('admin/slider_controller/viewslider');?>"><i class="glyphicon glyphicon-eye-open"></i><span> View slider</span></a>
-                        </li>
+                          <li><a class="ajax-link" href="<?=site_url('admin/order_controller/');?>"><i class="glyphicon glyphicon-eye-open"></i><span> Order</span></a>
+                        <!-- <li><a class="ajax-link" href="<?=site_url('admin/slider_controller/viewslider');?>"><i class="glyphicon glyphicon-eye-open"></i><span> View slider</span></a>
+                        </li> -->
                         
                     </ul>
                 </div>

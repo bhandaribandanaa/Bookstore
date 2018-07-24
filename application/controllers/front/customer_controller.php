@@ -28,7 +28,10 @@ class Customer_controller extends CI_Controller {
 						$data= $this->customer_model->insert_user($filename,$token);
                 }
           		else{
-          	 			echo validation_errors();
+          	 			// $error = validation_errors();
+          	 			// // print_r($error_message);
+          	 			// $this->session->set_flashdata('errormsg', $error, TRUE);
+          	 			redirect(site_url('front/customer_controller'),'refresh');
           	 			exit();		
           		}	
          

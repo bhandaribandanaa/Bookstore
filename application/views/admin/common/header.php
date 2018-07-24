@@ -58,7 +58,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="http://localhost/interface-bookstore/admin/dashboard"> <img  src="<?=site_url('assets/img/logo.png');?>" height="180%" class="hidden-xs"/>
+            <a class="navbar-brand" href="http://localhost/interface-bookstore/admin/dashboard"> <img  src="<?=site_url('assets/img/adminlogo.png');?>" height="180%" style="width: 200; height: 200;"/>
                 </a>
 
             <!-- user dropdown starts -->

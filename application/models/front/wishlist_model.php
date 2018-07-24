@@ -31,9 +31,9 @@ public function save($cus_id)
     }
 	
 
-public function delete($cus_id)
+public function delete($cus_id,$book_id)
 {
-	$book_id = $this->input->post('book_id');
+	//$book_id = $this->input->post('book_id');
     // echo $book_id;
     // die();
     $this->db->where('book_id',$book_id);

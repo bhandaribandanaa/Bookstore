@@ -37,6 +37,20 @@ class Payment_controller extends CI_Controller {
 	{
 		$this->load->view('front/failure');
 	}
+
+	public function getordercod()
+	{
+		$this->load->model('front/order');
+		if($this->order->getordercod())
+		{
+			$this->load->library('cart');
+			$this->cart->destroy();
+			$this->load->view('front/success');
+		}else{
+			$this->load->view('front/failure');
+		}
+		
+	}
 }
 
 /* End of file payment_controller.php */
