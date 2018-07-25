@@ -46,7 +46,7 @@ _________________________________________________________ -->
                     </div>
                     <div class="col-md-5">
                         <ul class="breadcrumb">
-                            <li><a href="index.html">Home</a>
+                            <li><a href="http://localhost/interface-bookstore/front/shop_controller/view">Home</a>
                             </li>
                             <li>New account / Sign in</li>
                         </ul>
@@ -66,7 +66,7 @@ _________________________________________________________ -->
 
                             <p class="lead">Not our registered customer yet?</p>
                             <p>By registering with us you can buy latest books in a minute!</p>
-                            <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a></p>
+                            
 
                             <hr>
 

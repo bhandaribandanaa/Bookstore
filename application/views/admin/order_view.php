@@ -128,10 +128,10 @@ $this->load->view('admin/common/sidebar');
                 <i class="glyphicon glyphicon-edit icon-white"></i>
                 Edit Status
             </a>
-            <a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?');" href="#">
+           <!--  <a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?');" href="<?=site_url('admin/order_controller/deletestatus/?id='.$o->or_id);?>">
                 <i class="glyphicon glyphicon-trash icon-white"></i>
                 Delete
-            </a>
+            </a> -->
         </td>
     <?php
     $i++;

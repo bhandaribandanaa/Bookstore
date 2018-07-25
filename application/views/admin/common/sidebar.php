@@ -31,8 +31,8 @@
                         </li>
                         <li><a class="ajax-link" href="<?=site_url('admin/subcategory_controller/viewbookcategory');?>"><i class="glyphicon glyphicon-eye-open"></i><span> View book subcategory</span></a>
                         </li>
-                        <li><a class="ajax-link" href="<?=site_url('admin/custretailer_controller');?>"><i class="glyphicon glyphicon-plus"></i><span>  Add customer</span></a>
-                        </li>
+                        <!-- <li><a class="ajax-link" href="<?=site_url('admin/custretailer_controller');?>"><i class="glyphicon glyphicon-plus"></i><span>  Add customer</span></a>
+                        </li> -->
                         <li><a class="ajax-link" href="<?=site_url('admin/custretailer_controller/viewuser');?>"><i class="glyphicon glyphicon-eye-open"></i><span> View customer</span></a>
                         </li>
                          <li><a class="ajax-link" href="<?=site_url('admin/ourteam_controller');?>"><i class="glyphicon glyphicon-plus"></i><span> Our Team</span></a>

@@ -89,13 +89,13 @@ _________________________________________________________ -->
                             </p>
                         </div>
                         <div class="col-xs-7">
-                            <div class="social">
+                           <!--  <div class="social">
 
                                 <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
                                 <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
                                 <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
                                 <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
-                            </div>
+                            </div> -->
 
                             <!-- <div class="login">
                                 <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i> <span class="hidden-xs text-uppercase">Sign in</span></a>
@@ -136,6 +136,14 @@ _________________________________________________________ -->
 
                             <ul class="nav navbar-nav navbar-right">
                                 
+                                <li class="dropdowm active">
+                                    <a href="<?=site_url('front/cart_controller');?>" class="dropdown-toggle"><div id="ex4">
+                              <span class="p1 fa-stack fa-2x has-badge" data-count="2">
+                              
+                                <i class="p3 fa fa-shopping-cart fa-stack-1x xfa-inverse" data-count="4b"></i>
+                              </span>
+                            </div></a></li>
+                                                            
                                 <li class="dropdown active">
                                     <a href="<?=site_url('front/shop_controller/view/view');?>" class="dropdown-toggle" >Home <b></b></a>
                                 </li>
@@ -144,11 +152,14 @@ _________________________________________________________ -->
                                 <li class="dropdown active">
                                     <a href="<?=site_url('front/customer_controller');?>" class="dropdown-toggle" >Register/Login<b></b></a>
                                 </li>
-                                <li class="dropdown active">
+                                <!-- <li class="dropdown active">
                                     <a href="<?=site_url('front/help_controller');?>" class="dropdown-toggle" >Need help <b></b></a>
-                                </li>
+                                </li> -->
 
                                 <?php } ?>
+                                 <li class="dropdown active">
+                                    <a href="<?=site_url('front/help_controller');?>" class="dropdown-toggle" >Need help <b></b></a>
+                                </li>
                                 
                                 <!-- ========== FULL WIDTH MEGAMENU ================== -->
                                 
@@ -167,6 +178,7 @@ _________________________________________________________ -->
                                 </li>
                                 <?php if(is_userlogin())
                                 {?>
+
                                     <li class="dropdown active">
                                     <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown">Welcome <?php echo $this->session->userdata('username'); ?> <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
@@ -177,16 +189,12 @@ _________________________________________________________ -->
                                         <?php if($this->session->userdata('username')!= NULL){?> 
                                         <li><a href="<?= site_url('front/dashboard/logout') ?>">Logout</a>
                                         </li>
+                                        
                                         <?php } ?>
 
                                     </ul>
                                 </li>
-                                <a href="<?=site_url('front/cart_controller');?>" class="dropdown-toggle"><div id="ex4">
-  <span class="p1 fa-stack fa-2x has-badge" data-count="2">
-    <!--<i class="p2 fa fa-circle fa-stack-2x"></i>-->
-    <i class="p3 fa fa-shopping-cart fa-stack-1x xfa-inverse" data-count="4b"></i>
-  </span>
-</div></a>
+    
                                 <?php } ?>
 
                                 
@@ -194,7 +202,7 @@ _________________________________________________________ -->
 
                         </div>
                         <!--/.nav-collapse -->
-
+                          
 
 
                         <div class="collapse clearfix" id="search">
@@ -207,6 +215,7 @@ _________________________________________________________ -->
                     <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
 
                 </span>
+
                                 </div>
                             </form>
 
