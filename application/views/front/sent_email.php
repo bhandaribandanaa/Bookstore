@@ -1,20 +1,19 @@
 <?php 
     $this->load->view('front/header');
 ?>
-<br>
-<br>
-<br>
-<br>
-
+<div class="content">
 <div class="container">
 	<div class="row">
 		 <div class="col-md-12">
-		<h3>Your email has been validated. Click <a href="<?=site_url('front/shop_controller/view/');?>">here</a> to continue shopping.</h3>
-	</div>
+            <h3>Email validation code has been sent!</h3>
+            <p>Please check your email.</p>
+         </div>
+</div>
 </div>
 </div>
 <br>
 <br>
+
 <br>
 <br>
 

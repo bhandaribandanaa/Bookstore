@@ -9,7 +9,16 @@ class Cart_controller extends CI_Controller {
 		{
 			redirect(site_url('front/customer_controller'),'refresh');
 			exit();
+		} else {
+			if(!is_userverified()){
+				// echo "true";
+				// die();
+				redirect(site_url('front/email_controller'),'refresh');
+				exit();
+			}
 		}
+
+
 			$this->load->library('cart');
 			$this->load->model('front/bookdetail_model');
 			$this->load->model('front/cart_model');

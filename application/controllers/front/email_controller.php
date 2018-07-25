@@ -20,8 +20,8 @@ class Email_controller extends CI_Controller {
 			  'protocol' => 'smtp',
 			  'smtp_host' => 'ssl://smtp.googlemail.com',
 			  'smtp_port' => 465,
-			  'smtp_user' => 'interfacebookstore@gmail.com',
-			  'smtp_pass' => 'Interfacebookstore1',
+			  'smtp_user' => 'interfacebookstore5@gmail.com',
+			  'smtp_pass' => 'bookstore5',
 			  'mailtype'  => 'html',
 		    'charset'   => 'utf-8'
 			);
@@ -34,13 +34,14 @@ class Email_controller extends CI_Controller {
 		$htmlContent .= '<p>Your code is: </p>'.$token;
 		$htmlContent .= '<p>Click <a href="http://localhost/interface-bookstore/front/email_controller/verifyemail">here</a> to enter your validation code.</p>';
 		$this->email->to($customer_email);
-		$this->email->from('interfacebookstore@gmail.com','Interface Book Store');
+		$this->email->from('interfacebookstore5@gmail.com','Interface Book Store');
 		$this->email->subject('Please Validate Your Email');
 		$this->email->message($htmlContent);
 
 		//Send email
-		$this->load->library('encrypt');
+		// $this->load->library('encrypt');
 		$this->email->send();
+		$this->load->view('front/sent_email');
 		}else{
 			echo"error";
 		}
