@@ -10,7 +10,18 @@ class Review_model extends CI_Model {
              $data['comment'] = $this->input->post('comment');
              $data['book_id']= $this->input->post('book_id') ;
              $data['customer_id']= $cus_id;
-             return $this->db->insert('review',$data);
+
+             $this->db->select('*');
+             $this->db->where('book_id', $this->input->post('book_id')
+             );
+             $this->db->having('customer_id',$cus_id);
+             $query = $this->db->get('review');
+             // print_r($query);
+             // die();
+             if($query->num_rows()==0){
+             	return $this->db->insert('review',$data);
+             }
+             return "error";
 	}
 
 	public function edit_review($review_id)
@@ -28,6 +39,7 @@ class Review_model extends CI_Model {
              $data['title']= $this->input->post('title');
              $data['comment'] = $this->input->post('comment');
              $data['book_id']= $book_id ;
+             $data['rate'] = $this->input->post('score');
              $data['customer_id']= $cus_id;
              $this->db->where('review_id',$review_id);
              return $this->db->update('review', $data);

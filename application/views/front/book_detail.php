@@ -172,7 +172,8 @@
                     <div class="pull-left meta">
                         <div class="title h5">
                             <a href="#"><b><?php echo $rt->fullname;?></b></a>
-                            rated this book <div class='userrate'>
+                            rated this book 
+                             <div id='userrate<?php echo $rt->review_id;?>'>
                                             
                                         
                                            </div> 
@@ -180,7 +181,7 @@
                                                 $(document).ready(function(){
           // Below line will get stars images from img folder 
           $.fn.raty.defaults.path = '<?= base_url() ?>assets/front/img';
-                                             $('.userrate').raty({ score: <?php echo $rt->rate;?>});
+                                             $('#userrate<?php echo $rt->review_id;?>').raty({ score: <?php echo $rt->rate;?>});
                                          });
                                         </script>
                                            <br>
@@ -228,11 +229,32 @@
           </div>
           <div class="form-group">
         <label> Rate this book:</label>
-    <div id="star" >
     
     
-  </div>
-  <input type="hidden" name="score" id="score" value="<?php echo $rt->rate;?>" />
+         <div id='star<?php echo $rt->review_id;?>'>
+                                            
+                                        
+                                           </div> 
+                                           <script type="text/javascript"> 
+                                                $(document).ready(function(){
+          // Below line will get stars images from img folder 
+          $.fn.raty.defaults.path = '<?= base_url() ?>assets/front/img';
+                                             $('#star<?php echo $rt->review_id;?>').raty({ 
+                                              score: <?php echo $rt->rate;?>
+
+                                            });
+                                         });
+                                                $('#star<?php echo $rt->review_id;?>').raty({
+        click: function(score, evt) {
+          alert('score: ' + score); 
+          document.getElementById("score").value = score;
+      
+    }
+
+    });
+                                        </script>
+  
+  <input type="hidden" name="score" id="score" value="" />
           </div>
           <input type="hidden" name="book_id" value="<?php echo $rt->book_id;?>" >
         <input type="hidden" name="review_id" value="<?php echo $rt->review_id;?>" >

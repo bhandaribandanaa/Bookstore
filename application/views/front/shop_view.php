@@ -101,7 +101,11 @@ _________________________________________________________ -->
                                         <span style="display: inline-block;">
                                         <p class="buttons">
                                             <form action="<?=site_url('front/cart_controller/add_to_cart');?>" method="post" style="display: inline;">
-                                                <button title="Add to cart" type="submit" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i></button>
+                                                <input type="hidden" name="id" value="<?php echo $r->book_id;?>">
+                                                <input type="hidden" name="book_title" value="<?php echo $r->book_title;?>">
+                                                <input type="hidden" name="price" value="<?php echo $r->price;?>">
+
+                                                <button type="submit" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i></button>
                                             </form>
                                             <form action="<?=site_url('front/wishlist_controller/add');?>" method="POST" style="display: inline;">
                                                 <input type="hidden" id="book_id" name="book_id" value="<?php echo $r->book_id;?>">

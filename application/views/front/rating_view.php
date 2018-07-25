@@ -11,7 +11,7 @@
 		
 		
 	</div>
-	<input type="hidden" name="score" id="score" value= />
+	<input type="hidden" name="score" id="score"/>
 		<button type="submit" name="submit" value="Rate">Rate</button>
 	</form>
 	
