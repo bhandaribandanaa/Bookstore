@@ -151,29 +151,20 @@
                        </div>
 
 
-                     <div class="box social" id="product-social">
+                  <div class="col-md-12">       
 
-<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="<?=site_url('assets/css/comment.css')?>">
-<div class="container">
-                                    
-    <div class="row">
-        <?php
+        <div class="box">
+          <div class="heading"><h1 style="text-align: center;">Reviews</h1>  </div> 
+          <?php
                                         $i=1;   
                                         foreach($rate as $rt){
 
                                     ?>
-        <div class="col-sm-8">
-            <div class="panel panel-white post panel-shadow">
-                <div class="post-heading">
-                    <!-- <div class="pull-left image">
-                        <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
-                    </div> -->
-                    <div class="pull-left meta">
-                        <div class="title h5">
-                            <a href="#"><b><?php echo $rt->fullname;?></b></a>
-                            rated this book 
-                             <div id='userrate<?php echo $rt->review_id;?>'>
+          <div style="text-align: left;     margin-bottom: 9px;">
+            <h3><?php echo $rt->title;?></h3>
+
+          </div>
+          <p class="lead" style="text-align: left; font-size: 100%;     margin-bottom: 5px;" ><b><?php echo $rt->fullname;?></b> rated this book </p> <div id='userrate<?php echo $rt->review_id;?>'>
                                             
                                         
                                            </div> 
@@ -184,32 +175,22 @@
                                              $('#userrate<?php echo $rt->review_id;?>').raty({ score: <?php echo $rt->rate;?>});
                                          });
                                         </script>
-                                           <br>
-                                             <b>"<?php echo $rt->title;?>"</b>
-                        
-                                        
-                </div> 
-                
+                                        <br>
+
+          <p style="text-align: left; overflow-wrap: break-word;"><?php echo $rt->comment;?></p>
+          <?php if( $rt->customer_id == $this->session->userdata('id')){ ?>
+          <div style="display: inline; float: left;">
+          <a  onclick="return confirm('Are you sure you want to delete?');" href="<?=site_url('front/review_controller/delete_review/?review_id='.$rt->review_id.'&book_id='.$rt->book_id);?>"><i class="glyphicon glyphicon-trash icon-white" title="Delete review" style="padding-left: 5px;
+    padding-right: 5px;"></i></a>
+          <a type="button"  data-toggle="modal" data-target="#editreview<?php echo $rt->review_id;?>"><i class="glyphicon glyphicon-edit" style="float: left; " title="Edit review"></i></a>
         </div>
-        
-    </div>
-                                        <div class="post-description" id="post-description"> 
-                                        <p><?php echo $rt->comment;?></p>    
-                                    </div>
-                                    <?php if( $rt->customer_id == $this->session->userdata('id')){ ?>
-                                        <div>
-                                 
-                                    <a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?');" href="<?=site_url('front/review_controller/delete_review/?review_id='.$rt->review_id.'&book_id='.$rt->book_id);?>">
-                <i class="glyphicon glyphicon-trash icon-white" title="Delete review"></i>
-            </a>
+      
+        <br> <hr>
         </div>
-        <a type="button" class="btn btn-info" data-toggle="modal" data-target="#editreview<?php echo $rt->review_id;?>"><i class="glyphicon glyphicon-edit"></i></a>
+      </div>
+      <?php } ?>
 
-        <!-- $this->load->view('front/edit_review'); -->
 
-        <?php } ?>
-
-</div>
 <div class="modal fade" id="editreview<?php echo $rt->review_id;?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -290,18 +271,19 @@
                 });
 
   </script>
-</div>
+
                                     <?php
                                         $i++;
                                     }
                                     ?>
-</div>
+
 
 
 
                         
-                    </div>
                       </div>
+                      </div>
+                
                     <!-- /.col-md-9 -->
 
 
