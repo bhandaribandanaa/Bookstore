@@ -135,14 +135,14 @@ _________________________________________________________ -->
                         <div class="navbar-collapse collapse" id="navigation">
 
                             <ul class="nav navbar-nav navbar-right">
-                                
+                               <!--  
                                 <li class="dropdowm active">
                                     <a href="<?=site_url('front/cart_controller');?>" class="dropdown-toggle"><div id="ex4">
                               <span class="p1 fa-stack fa-2x has-badge" data-count="2">
                               
                                 <i class="p3 fa fa-shopping-cart fa-stack-1x xfa-inverse" data-count="4b"></i>
                               </span>
-                            </div></a></li>
+                            </div></a></li> -->
                                                             
                                 <li class="dropdown active">
                                     <a href="<?=site_url('front/shop_controller/view/view');?>" class="dropdown-toggle" >Home <b></b></a>

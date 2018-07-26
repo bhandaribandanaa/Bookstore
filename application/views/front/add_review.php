@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+
 	<!-- Button trigger modal -->
-<button type="button" class="btn btn-template-main" data-toggle="modal" data-target="#review">
+<button type="button" id="add_review"  class="btn btn-template-main" data-toggle="modal" data-target="#review">
   Add Review
 </button>
 
@@ -46,7 +41,7 @@
     </div>
   </div>
 </div>
-</body>
+
 <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
 
 <!--For Raty-->
@@ -74,4 +69,3 @@
                 });
 
 	</script>
-</html>

@@ -13,7 +13,7 @@
                     </div>
                     <div class="col-md-5">
                         <ul class="breadcrumb">
-                            <li><a href="shop_controller">Home</a>
+                            <li><a href="shop_controller/view">Home</a>
                             </li>
                             <li>Our team</li>
                         </ul>
@@ -54,8 +54,7 @@
                                
                                 <div class="social">
                                     <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
+                                    
                                     <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
                                 </div>
                                 <div class="text">
@@ -77,25 +76,7 @@
                     
             <!-- /.container -->
 
-            <section class="bar background-gray no-mb">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            
-                           
-
-                            <!-- *** TESTIMONIALS CAROUSEL ***
- _________________________________________________________ -->
-
-                            
-                            <!-- /.owl-carousel -->
-
-                            <!-- *** TESTIMONIALS CAROUSEL END *** -->
-                        </div>
-
-                    </div>
-                </div>
-            </section>
+        
             <!-- /.bar -->
 
         </div>

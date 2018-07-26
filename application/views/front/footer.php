@@ -21,7 +21,7 @@
                         </span>
                         9849467232, 9842566335, 9841464628<br>
                          <span style="line-height:1.6em;">
-                            Email: <a href="#" class="external facebook" data-animate-hover="pulse">interfacebookstore@gmail.com</a>
+                            Email: <a href="#" class="external facebook" data-animate-hover="pulse">interfacebookstore5@gmail.com</a>
                          </span>
                      </p>
                  </address>

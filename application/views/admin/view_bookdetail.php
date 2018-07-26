@@ -112,8 +112,11 @@ $this->load->view('admin/common/sidebar');
             <td><?php echo $r->book_publisher?></td>
             <td><?php echo $r->book_stock; ?></td>
             <td><?php echo $r->publication_date; ?></td>
-            <td><?php echo $r->description; ?></td>
-            <td class="center"><?php $k= $r->image; ?><img src="<?php echo base_url().'/uploads/bookdetail/'.$k ?>" height="200" width="250"></td>
+            <td><div style="width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;"><?php echo $r->description; ?></div></td>
+            <td class="center"><?php $k= $r->image; ?><img src="<?php echo base_url().'/uploads/bookdetail/'.$k ?>" height="150" width="100"></td>
             <td><?php echo $r->price; ?></td>
             <td class="center">
             <a class="btn btn-info" href="editdetail/?book_id=<?php echo $r->book_id;?>">

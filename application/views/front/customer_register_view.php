@@ -70,7 +70,7 @@ _________________________________________________________ -->
 
                             <hr>
 
-                            <form  id="register" action="<?=site_url('front/customer_controller/customer_register')?>" method="post" enctype="multipart/form-data">
+                            <form  id="register" onsubmit="return validForm()" action="<?=site_url('front/customer_controller/customer_register')?>" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="name-login">Name</label>
                                     <input type="text" class="form-control" name="fullname" id="fullname" required>
@@ -105,9 +105,9 @@ _________________________________________________________ -->
                                 <!--   <div class="form-group">
                         <div class="g-recaptcha" data-sitekey="6LeHBWMUAAAAAI6E4vNdle8MRIZC80FynBElI61n"></div>
                     </div> -->
-                    <div class="alert alert-danger">
+                    <!-- <div class="alert alert-danger">
                     <?php echo validation_errors();?>
-                </div>
+                </div> -->
 
                                     <input type="hidden" name="resetpassword" id="resetpassword" value="0">
                                      <div class="form-group">
@@ -197,7 +197,26 @@ _________________________________________________________ -->
             $('#validcaptcha').val('invalid');
         }
      }*/
-     $('#testbtn').click(function(){
+     function validForm(){
+        const pass = $('#password').val();
+        const confirm_password = $('#confirm_password').val();
+        if(pass != confirm_password)
+        {
+            alert('confirm password must be same');
+            return false;
+        }
+        if(grecaptcha.getResponse(widgetId1))
+        {
+            //alert('valid');s
+           return true;
+        }
+        else
+        {
+            alert('Invalid Captcha');
+            return false;
+        }
+    }
+     /*$('#testbtn').click(function(){
         if(grecaptcha.getResponse(widgetId1))
         {
             //alert('valid');s
@@ -207,7 +226,7 @@ _________________________________________________________ -->
         {
             alert('Invalid Captcha');
         }
-     });
+     });*/
       var onloadCallback = function() {
         widgetId1 = grecaptcha.render('example1', {
           'sitekey' : '6LeHBWMUAAAAAI6E4vNdle8MRIZC80FynBElI61n',

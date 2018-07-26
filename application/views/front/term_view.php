@@ -17,7 +17,7 @@
                     </div>
                     <div class="col-md-5">
                         <ul class="breadcrumb">
-                            <li><a href="index.html">Home</a>
+                            <li><a href="shop_controller/view">Home</a>
                             </li>
                             
                             <li>Terms of Payment</li>

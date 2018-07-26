@@ -44,7 +44,7 @@
                     </div>
                     <div class="col-md-5">
                         <ul class="breadcrumb">
-                            <li><a href="index.html">Home</a>
+                            <li><a href="<?=site_url('front/shop_controller/view');?>">Home</a>
                             </li>
                             <li>TITLE</li>
                         </ul>
@@ -63,9 +63,7 @@
             _________________________________________________________ -->
 
                     <div class="col-md-9">
-                        <p class="goToDescription"><a href="<?=site_url('front/shop_controller/view');?>" class="scroll-to text-uppercase">Go back to browsing other books.</a>
-                        </p>
-
+                        
                         <div class="row" id="productMain">
                             <div class="col-sm-6">
                                 <div id="mainImage">
@@ -156,9 +154,13 @@
         <div class="box">
           <div class="heading"><h1 style="text-align: center;">Reviews</h1>  </div> 
           <?php
-                                        $i=1;   
-                                        foreach($rate as $rt){
-
+            $i=1;  
+            $review_exist = FALSE; 
+            foreach($rate as $rt)
+            {
+              if($rt->customer_id == $this->session->userdata('id'))
+                  $review_exist = TRUE;
+                                            
                                     ?>
           <div style="text-align: left;     margin-bottom: 9px;">
             <h3><?php echo $rt->title;?></h3>
@@ -235,7 +237,7 @@
     });
                                         </script>
   
-  <input type="hidden" name="score" id="score" value="" />
+
           </div>
           <input type="hidden" name="book_id" value="<?php echo $rt->book_id;?>" >
         <input type="hidden" name="review_id" value="<?php echo $rt->review_id;?>" >
@@ -250,6 +252,13 @@
 </div>
 <script type="text/javascript" src="<?= base_url() ?>js/jquery.raty.min.js"></script>
 <script type="text/javascript">
+  const review_exist = <?= $review_exist ?>;
+  if(review_exist)
+  {
+    $('#add_review').attr('data-toggle','');
+    $('#add_review').attr('onclick','alert("review already exist.")');
+  }
+
 
   $(document).ready(function(){
       // Below line will get stars images from img folder 
