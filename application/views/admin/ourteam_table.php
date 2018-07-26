@@ -54,10 +54,10 @@ $this->load->view('admin/common/sidebar');
                 <div>
         <ul class="breadcrumb">
             <li>
-                <a href="#">Home</a>
+                <a href="http://localhost/interface-bookstore/admin/dashboard/">Home</a>
             </li>
             <li>
-                <a href="#">view OurTeam</a>
+                <a href="http://localhost/interface-bookstore/admin/ourteam_controller/viewourteam/">View OurTeam</a>
             </li>
         </ul>
     </div>
@@ -66,7 +66,7 @@ $this->load->view('admin/common/sidebar');
     <div class="box col-md-12">
     <div class="box-inner">
     <div class="box-header well" data-original-title="">
-        <h2><i class="glyphicon glyphicon-user">view OurTeam</i> </h2>
+        <h2><i class="glyphicon glyphicon-user">View OurTeam</i> </h2>
 
         <div class="box-icon">
             <a href="#" class="btn btn-setting btn-round btn-default"><i class="glyphicon glyphicon-cog"></i></a>

@@ -26,8 +26,8 @@
             <i class="glyphicon glyphicon-user blue"></i>
 
             <div>Total Members</div>
-            <div>6</div>
-            <span class="notification">6</span>
+            <div>5</div>
+            <span class="notification">5</span>
         </a>
     </div>
 

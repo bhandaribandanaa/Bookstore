@@ -53,10 +53,10 @@ $this->load->view('admin/common/sidebar');
             <div>
     <ul class="breadcrumb">
         <li>
-            <a href="#">Home</a>
+            <a href="http://localhost/interface-bookstore/admin/dashboard/">Home</a>
         </li>
         <li>
-            <a href="#">EditCategory</a>
+            <a href="http://localhost/interface-bookstore/admin/subcategory_controller/editbookcategory/">EditCategory</a>
         </li>
     </ul>
 </div>

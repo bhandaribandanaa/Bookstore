@@ -50,17 +50,17 @@ $this->load->view('admin/common/sidebar');
 ?>
         <div id="content" class="col-lg-10 col-sm-10">
             <!-- content starts -->
-            <div>
+            <!-- <div>
     <ul class="breadcrumb">
         <li>
-            <a href="#">Home</a>
+            <a href="http://localhost/interface-bookstore/admin/dashboard">Home</a>
         </li>
         <li>
-            <a href="#">EditCategory</a>
+            <a href="http://localhost/interface-bookstore/admin/category_controller/editbookcategory/">EditCategory</a>
         </li>
     </ul>
 </div>
-
+ -->
 
 
 <div class="row">

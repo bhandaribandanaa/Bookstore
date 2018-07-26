@@ -69,7 +69,7 @@ _________________________________________________________ -->
             <div id="top">
                 <div class="container">
                     <div class="row">
-                    	  <div> 
+                          <div> 
                             <form method="POST" action="http://localhost/interface-bookstore/front/search_controller/search"/>
                             <div class="input-group">
                             <input type='text' name='search' placeholder="Search for book title, author, isbn, etc.">
@@ -135,14 +135,14 @@ _________________________________________________________ -->
                         <div class="navbar-collapse collapse" id="navigation">
 
                             <ul class="nav navbar-nav navbar-right">
-                               <!--  
+                                
                                 <li class="dropdowm active">
                                     <a href="<?=site_url('front/cart_controller');?>" class="dropdown-toggle"><div id="ex4">
-                              <span class="p1 fa-stack fa-2x has-badge" data-count="2">
+                              <span class="p1 fa-stack fa-2x has-badge">
                               
                                 <i class="p3 fa fa-shopping-cart fa-stack-1x xfa-inverse" data-count="4b"></i>
                               </span>
-                            </div></a></li> -->
+                            </div></a></li>
                                                             
                                 <li class="dropdown active">
                                     <a href="<?=site_url('front/shop_controller/view/view');?>" class="dropdown-toggle" >Home <b></b></a>
@@ -152,9 +152,7 @@ _________________________________________________________ -->
                                 <li class="dropdown active">
                                     <a href="<?=site_url('front/customer_controller');?>" class="dropdown-toggle" >Register/Login<b></b></a>
                                 </li>
-                                <!-- <li class="dropdown active">
-                                    <a href="<?=site_url('front/help_controller');?>" class="dropdown-toggle" >Need help <b></b></a>
-                                </li> -->
+                               
 
                                 <?php } ?>
                                  <li class="dropdown active">

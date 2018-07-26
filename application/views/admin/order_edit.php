@@ -36,17 +36,7 @@
       <?php include("common/sidebar.php");?>
         <div id="content" class="col-lg-10 col-sm-10">
             <!-- content starts -->
-            <div>
-    <ul class="breadcrumb">
-        <li>
-            <a href="#">Home</a>
-        </li>
-        <!-- <li>
-            <a href="#">Add </a>
-        </li> -->
-    </ul>
-</div>
-
+         
 <div class="row">
     <div class="box col-md-12">
         <div class="box-inner">

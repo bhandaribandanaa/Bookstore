@@ -13,13 +13,8 @@
                         <li><a class="ajax-link" href="http://localhost/interface-bookstore/admin/dashboard"><i class="glyphicon glyphicon-home"></i><span> Dashboard</span></a>
                         </li>
                        
-                        <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-plus"></i><span> Accordion Menu</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">Child Menu 1</a></li>
-                                <li><a href="#">Child Menu 2</a></li>
-                            </ul>
-                        </li> 
+                       <li><a class="ajax-link" href="<?=site_url('admin/order_controller/');?>"><i class="glyphicon glyphicon-eye-open"></i><span> Order</span></a>
+                          </li>
                          <li><a class="ajax-link" href="<?=site_url('admin/book_detail/');?>"><i class="glyphicon glyphicon-plus"></i><span> Add BookDetail</span></a>
                         <li><a class="ajax-link" href="<?=site_url('admin/book_detail/viewdetail');?>"><i class="glyphicon glyphicon-eye-open"></i><span> View BookDetail</span></a>
                         </li>
@@ -39,10 +34,8 @@
                         </li>
                         <li><a class="ajax-link" href="<?=site_url('admin/ourteam_controller/viewourteam');?>"><i class="glyphicon glyphicon-eye-open"></i><span> View Team</span></a>
                         </li>
-                          <li><a class="ajax-link" href="<?=site_url('admin/order_controller/');?>"><i class="glyphicon glyphicon-eye-open"></i><span> Order</span></a>
-                        <!-- <li><a class="ajax-link" href="<?=site_url('admin/slider_controller/viewslider');?>"><i class="glyphicon glyphicon-eye-open"></i><span> View slider</span></a>
-                        </li> -->
-                        
+
+                       
                     </ul>
                 </div>
             </div>
