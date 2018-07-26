@@ -12,7 +12,7 @@
         http://www.apache.org/licenses/LICENSE-2.0
 
         http://usman.it
-        http://twitter.com/halalit_usman
+        http://twitter.com/
         ===
     -->
     <meta charset="utf-8">

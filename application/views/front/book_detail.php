@@ -151,22 +151,30 @@
 
                   <div class="col-md-12">       
 
-        <div class="box">
+        <div class="box" style="display:table;">
           <div class="heading"><h1 style="text-align: center;">Reviews</h1>  </div> 
           <?php
-            $i=1;  
-            $review_exist = FALSE; 
-            foreach($rate as $rt)
-            {
-              if($rt->customer_id == $this->session->userdata('id'))
+                                        $i=1;   
+                                        foreach($rate as $rt){
+                                          if($rt->customer_id == $this->session->userdata('id'))
                   $review_exist = TRUE;
-                                            
                                     ?>
-          <div style="text-align: left;     margin-bottom: 9px;">
-            <h3><?php echo $rt->title;?></h3>
-
-          </div>
-          <p class="lead" style="text-align: left; font-size: 100%;     margin-bottom: 5px;" ><b><?php echo $rt->fullname;?></b> rated this book </p> <div id='userrate<?php echo $rt->review_id;?>'>
+        <div class="col-sm-8">
+            <div class="panel panel-white post panel-shadow">
+                <div class="post-heading">
+                    <!-- <div class="pull-left image">
+                        <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
+                    </div> -->
+                    <div class="pull-left meta">
+                        <div class="title h5">
+                          <h4   style="margin: auto;     border-bottom: solid 2px #38a7bb;
+    line-height: 1;"  ><?php echo $rt->title;?></h4>
+                            
+                                           <br>
+                                            
+                        <b><?php echo $rt->fullname;?></b>
+                           <i> rated this book</i> 
+                             <div id='userrate<?php echo $rt->review_id;?>'>
                                             
                                         
                                            </div> 
@@ -177,27 +185,40 @@
                                              $('#userrate<?php echo $rt->review_id;?>').raty({ score: <?php echo $rt->rate;?>});
                                          });
                                         </script>
-                                        <br>
+                                        
+                </div> 
+                
+        </div>
+        
+    </div>
+                                        <div class="post-description" id="post-description"> 
+                                        <p style="text-align: justify;"><?php echo $rt->comment;?></p>    
+                                    </div>
+                                    <div style="text-align: right;  position: absolute;
+    top: 13px;
+    right: 28px;">
+                                    <?php if( $rt->customer_id == $this->session->userdata('id')){ ?>
+                                       <a  onclick="return confirm('Are you sure you want to delete?');" href="<?=site_url('front/review_controller/delete_review/?review_id='.$rt->review_id.'&book_id='.$rt->book_id);?>">
+                <i class="glyphicon glyphicon-trash icon-white" title="Delete review"></i>
+            </a>
+            <a type="button" data-toggle="modal" data-target="#editreview<?php echo $rt->review_id;?>"><i class="glyphicon glyphicon-edit" title="Edit review"></i></a>
 
-          <p style="text-align: left; overflow-wrap: break-word;"><?php echo $rt->comment;?></p>
-          <?php if( $rt->customer_id == $this->session->userdata('id')){ ?>
-          <div style="display: inline; float: left;">
-          <a  onclick="return confirm('Are you sure you want to delete?');" href="<?=site_url('front/review_controller/delete_review/?review_id='.$rt->review_id.'&book_id='.$rt->book_id);?>"><i class="glyphicon glyphicon-trash icon-white" title="Delete review" style="padding-left: 5px;
-    padding-right: 5px;"></i></a>
-          <a type="button"  data-toggle="modal" data-target="#editreview<?php echo $rt->review_id;?>"><i class="glyphicon glyphicon-edit" style="float: left; " title="Edit review"></i></a>
-        </div>
-      
-        <br> <hr>
-        </div>
-      </div>
-      <?php } ?>
+                                      </div>  
+                                  <?php } ?>
+                                     </div>
+        
+
+        <!-- $this->load->view('front/edit_review'); -->
+
+</div>
+</div>
 
 
 <div class="modal fade" id="editreview<?php echo $rt->review_id;?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Your Review</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Edit Review</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -256,7 +277,7 @@
   if(review_exist)
   {
     $('#add_review').attr('data-toggle','');
-    $('#add_review').attr('onclick','alert("review already exist.")');
+    $('#add_review').attr('onclick','alert("You have already reviewed this book!")');
   }
 
 
