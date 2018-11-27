@@ -45,7 +45,7 @@
                     </div> 
                     <div class="form-group">
                         <label for="exampleInputEmail1">PhoneNumber:</label>
-                        <input type="number" class="form-control" name="phone" id="phone"  value="<?php echo $records->phone;?>" required>
+                        <input type="text" class="form-control" name="phone" id="phone"  value="<?php echo $records->phone;?>" required>
                     </div>  
                     <div class="form-group">
                         <label for="exampleInputEmail1">UserName:</label>

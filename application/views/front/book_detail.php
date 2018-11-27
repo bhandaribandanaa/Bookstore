@@ -97,7 +97,14 @@
                                         <div class="sizes">
                                     
                                             <h3><?php echo $records['book_title'];?></h3>
-                                            
+                                              <?php if($average == 0 ) {?>
+
+                                               <i> No review yet </i>
+                                              <?php } else { ?>
+
+                                                <p><b>Average Rating:</b></p>
+                                              <center><div id='avgstar'></center>
+                                              <?php } ?>
                                         </div>
                                       
                                         <!-- gplus -->
@@ -110,13 +117,27 @@
                                         <p class="price">Rs. <?php echo $records['price'];?></p>
                                         <input type="hidden" name="id" value="<?php echo $records['book_id'];?>" >
                                         <input type="hidden" name="book_title" value="<?php echo $records['book_title'];?>" >
+
                                         <input type="hidden" name="price" value="<?php echo $records['price'];?>" >
                                            
                                 
                             
                                         <p class="text-center">
-                                            <button type="button" class="btn btn-template-main"><i class=""></i> Stock:&nbsp;<?php echo $records['book_stock'];?></button>
+                                        <?php if($records['book_stock']==0){?>
+
+                                          <button type="button" class="btn btn-template-main"><i class=""></i> Out Of Stock </button>  
+
+                                        <?php } elseif ($records['book_stock']<=5) { ?>
+
+                                          <button type="button" class="btn btn-template-main"><i class=""></i> Hurry only&nbsp;<?php echo $records['book_stock'];?> left in Stock</button>
+                                          
+                                          <button type="submit" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i> Add to cart</button>
+
+                                        <?php } else {?>
+
+                                            <button type="button" class="btn btn-template-main"><i class=""></i> In Stock</button>                                        
                                             <button type="submit" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i> Add to cart</button>
+                                          <?php } ?>
                                             
                                         </p>
 
@@ -148,7 +169,6 @@
 
                        </div>
 
-
                   <div class="col-md-12">       
 
         <div class="box" style="display:table;">
@@ -156,18 +176,21 @@
           <?php
                                         $i=1;   
                                         foreach($rate as $rt){
-                                          if($rt->customer_id == $this->session->userdata('id'))
-                  $review_exist = TRUE;
+                                         
+                  
                                     ?>
-        <div class="col-sm-8">
-            <div class="panel panel-white post panel-shadow">
+        <div class="col-sm-8" style=" min-width: 800px;
+    margin-top: 25px;
+    margin-right: -10px;
+    margin-left: -15px;">
+            <div class="panel panel-white post panel-shadow" style="overflow-wrap: break-word;">
                 <div class="post-heading">
                     <!-- <div class="pull-left image">
                         <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
                     </div> -->
-                    <div class="pull-left meta">
-                        <div class="title h5">
-                          <h4   style="margin: auto;     border-bottom: solid 2px #38a7bb;
+                    <div class="pull-left meta" >
+                        <div class="title h5" >
+                          <h4   style="word-break: break-all; margin: auto; border-bottom: solid 2px #38a7bb;
     line-height: 1;"  ><?php echo $rt->title;?></h4>
                             
                                            <br>
@@ -177,13 +200,16 @@
                              <div id='userrate<?php echo $rt->review_id;?>'>
                                             
                                         
-                                           </div> 
+                              </div> 
+                              <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
                                            <script type="text/javascript"> 
+
                                                 $(document).ready(function(){
           // Below line will get stars images from img folder 
           $.fn.raty.defaults.path = '<?= base_url() ?>assets/front/img';
                                              $('#userrate<?php echo $rt->review_id;?>').raty({ score: <?php echo $rt->rate;?>});
                                          });
+                                                
                                         </script>
                                         
                 </div> 
@@ -197,14 +223,17 @@
                                     <div style="text-align: right;  position: absolute;
     top: 13px;
     right: 28px;">
-                                    <?php if( $rt->customer_id == $this->session->userdata('id')){ ?>
+                                    <?php if( $rt->customer_id === $this->session->userdata('id')){ 
+                                      // echo $this->session->userdata('id');
+                                        $review_exist = TRUE;
+                                      ?>
                                        <a  onclick="return confirm('Are you sure you want to delete?');" href="<?=site_url('front/review_controller/delete_review/?review_id='.$rt->review_id.'&book_id='.$rt->book_id);?>">
                 <i class="glyphicon glyphicon-trash icon-white" title="Delete review"></i>
             </a>
             <a type="button" data-toggle="modal" data-target="#editreview<?php echo $rt->review_id;?>"><i class="glyphicon glyphicon-edit" title="Edit review"></i></a>
-
+           
                                       </div>  
-                                  <?php } ?>
+                                  <?php }?>
                                      </div>
         
 
@@ -248,7 +277,7 @@
 
                                             });
                                          });
-                                                $('#star<?php echo $rt->review_id;?>').raty({
+                                  $('#star<?php echo $rt->review_id;?>').raty({
         click: function(score, evt) {
           alert('score: ' + score); 
           document.getElementById("score").value = score;
@@ -271,41 +300,11 @@
     </div>
   </div>
 </div>
-<script type="text/javascript" src="<?= base_url() ?>js/jquery.raty.min.js"></script>
-<script type="text/javascript">
-  const review_exist = <?= $review_exist ?>;
-  if(review_exist)
-  {
-    $('#add_review').attr('data-toggle','');
-    $('#add_review').attr('onclick','alert("You have already reviewed this book!")');
-  }
-
-
-  $(document).ready(function(){
-      // Below line will get stars images from img folder 
-      $.fn.raty.defaults.path = '<?= base_url() ?>assets/front/img';
-      $('#star').raty({
-        click: function(score, evt) {
-          // alert('score: ' + score); 
-          document.getElementById("score").value = score;
-         //  $.ajax({
-         //   type: 'POST',
-         //   url: '/rating_controller.php',
-         //   data: {'score':score},
-         //  success: function(data){ alert('your rating have been saved'); }         
-         // });
-
-    }
-
-    });
-                });
-
-  </script>
-
                                     <?php
                                         $i++;
                                     }
                                     ?>
+
 
 
 
@@ -397,8 +396,32 @@ _________________________________________________________ -->
 <script src="<?= base_url() ?>assets/css/bootstrap.css"></script>
 <script src="<?= base_url() ?>assets/js/bootstrap.js"></script>
 <script src="<?= base_url() ?>assets/js/jquery-3.2.1.js"></script> -->
-
+ <!-- for average -->
+<script type="text/javascript">
+  
+ const review_exist = <?= $review_exist ?>;
+  if(review_exist)
+  {
+    $('#add_review').attr('data-toggle','');
+    $('#add_review').attr('onclick','alert("You have already reviewed this book!")');
+  }  
+                                 
+  </script>
 
 <!--For Raty-->
 <script type="text/javascript" src="<?= base_url() ?>js/jquery.raty.min.js"></script>
+
+
+
+<script type="text/javascript">
+  
+$(document).ready(function(){
+  // Below line will get stars images from img folder 
+  $.fn.raty.defaults.path = '<?= base_url() ?>assets/front/img';
+     $('#avgstar').raty({
+       score: <?php echo $average;?>
+     });
+ });
+    
+</script>
 

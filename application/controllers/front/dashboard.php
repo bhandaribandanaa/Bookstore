@@ -31,6 +31,7 @@ class Dashboard extends CI_Controller {
 		$this->load->library('cart');
 		$this->cart->destroy();
 		$this->session->unset_userdata('user_logged_in');
+		$this->session->sess_destroy();
 		redirect(site_url('front/shop_controller/view'),'refresh');
 	}
 

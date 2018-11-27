@@ -34,18 +34,18 @@
                     <div class="row">
                     	 <div class="col-md-12">
                     	 	<h2 class="title text-center">TERMS OF PAYMENT</h2><br><br>
-                    	 	<p>1. How to make a payment on purchases made from Online Book Store?<br>
-							Online Book Store offers various payment procedures. Online Book Stor assures to use a trusted payment gateway partners on the whatsoever mode of payment.<br>
+                    	 	<p>1. How to make a payment on purchases made from Interface Book Store?<br>
+							Interface Book Store offers various payment procedures. Interface Book Stor assures to use a trusted payment gateway partners on the whatsoever mode of payment.<br>
                             <br>
 							The current modes of payment that can be used are cash on delivery (COD), Card On Delivery, Card Payment and Paypal.
                             <br><br>
-							2. Are there any hidden charges when I make a purchase on Online Book Store?<br>
+							2. Are there any hidden charges when I make a purchase on Interface Book Store?<br>
 							There are no hidden charges when you make a purchase. The prices listed for all the items are final and all-inclusive of VAT. The price you see on the product page is exactly what you pay.<br>
 							Delivery charges may be extra depending on the location.<br>
 							<br>
 
                             3. What is Cash on Delivery?<br>
-							<strong>COD refers to Cash on Delivery</strong>. It doesn’t matter if you don’t have a Credit/Debit card for your online shopping. Online Book Store offers their customers an option of paying for the purchase at your doorstep.<br>
+							<strong>COD refers to Cash on Delivery</strong>. It doesn’t matter if you don’t have a Credit/Debit card for your online shopping. Interface Book Store offers their customers an option of paying for the purchase at your doorstep.<br>
 							Just place your order and make cash payment to our delivery partner upon the delivery of your item.<br>
 							<br>
 

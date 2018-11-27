@@ -20,6 +20,8 @@ class Dashboard extends CI_Controller {
 		$data['main_content'] = 'dashboard';
 		$this->load->model('admin/category_model');
 		$data['number']= $this->category_model->getbookcategory();
+		$this->load->model('admin/revenue_model');
+		$data['revenue'] = $this->revenue_model->view_revenue();
 		$this->load->view('admin/template', $data);
 	}
 

@@ -85,13 +85,22 @@
 		               				<?php foreach(array_slice($order,1) as $order) { 
 		               					?>
 		               				<tr>
-		               					<?php if($order->status!="Canceled"){ ?>
+		               					<?php if($order->status!="Canceled" && $order->status=="In Progress"){ ?>
 		               					<td><a href="<?=site_url('front/bookdetail_controller/?id='.$order->book_id);?>"><?php echo $order->book_title; ?></a></td>
 		               					<td><?php echo $order->quantity; ?></td>
 		               					<td><?php echo $order->total_amount; ?></td>
-		               					<td><a href="<?=site_url('front/customerview_controller/cancel_order/?order_id='.$order->or_id);?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to cancel this order?');" >Cancel Order?</a></td>
+
+		               					<td><a href="<?=site_url('front/customerview_controller/cancel_order/?order_id='.$order->or_id);?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to cancel this order?');" >Cancel Order?</a></td> 
 		               				</tr>
-		               			<?php } ?>
+		               			<?php } elseif($order->status=="Delivered") {?>
+		               				
+		               				<td><a href="<?=site_url('front/bookdetail_controller/?id='.$order->book_id);?>"><?php echo $order->book_title; ?></a></td>
+		               					<td><?php echo $order->quantity; ?></td>
+		               					<td><?php echo $order->total_amount; ?></td>
+
+		               					<td>Delivered</td>
+
+		               			 <?php } ?>
 		               				<?php } ?>
 		               				</table>
 		               			

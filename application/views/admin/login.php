@@ -60,8 +60,8 @@
                     <div class="clearfix"></div>
                     <p class="center col-md-5">
 
-                          <center><div class="form-group">
-                        <div id="example1" ></div></center>
+                   <!--        <center><div class="form-group">
+                        <div id="example1" ></div></center> -->
                         <button type="submit" id="loginadmin" class="btn btn-primary">Login</button>
                         <input type="hidden" name="login" value="LOGIN">
                     </p>

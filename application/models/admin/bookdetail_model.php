@@ -15,7 +15,8 @@ class Bookdetail_model extends CI_Model{
 		$data['publication_date']=$this->input->post('publication_date');
 		$data['description']=$this->input->post('description');
 		$data['image']=$filename;
-		$data['price']=$this->input->post('price');
+		$data['actual_price']=$this->input->post('price');
+		$data['price']=$this->input->post('price')*1.10;
 		return $this->db->insert('book_detail',$data);
 	}
 	public function view_detail(){
@@ -53,7 +54,8 @@ class Bookdetail_model extends CI_Model{
 		$data['publication_date']=$this->input->post('publication_date');
 		$data['description']=$this->input->post('description');
 		$data['image']=$filename;
-		$data['price']=$this->input->post('price');
+		$data['actual_price']=$this->input->post('price');
+		$data['price']=$this->input->post('price')*1.10;
 		$this->db->where('book_id',$book_id);
 		return $this->db->update('book_detail', $data);
 	}

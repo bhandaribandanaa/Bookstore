@@ -10,11 +10,15 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">Main</li>
-                        <li><a class="ajax-link" href="http://localhost/interface-bookstore/admin/dashboard"><i class="glyphicon glyphicon-home"></i><span> Dashboard</span></a>
+                        <li><a class="ajax-link" href="<?=site_url('admin/dashboard/');?>"><i class="glyphicon glyphicon-home"></i><span> Dashboard</span></a>
                         </li>
                        
-                       <li><a class="ajax-link" href="<?=site_url('admin/order_controller/');?>"><i class="glyphicon glyphicon-eye-open"></i><span> Order</span></a>
+                       <li><a class="ajax-link" href="<?=site_url('admin/order_controller/');?>"><i class="glyphicon glyphicon-eye-open"></i><span> View Order</span></a>
                           </li>
+                          <li><a class="ajax-link" href="<?=site_url('admin/topseller_controller/');?>"><i class="glyphicon glyphicon-eye-open"></i><span> View Top Seller</span></a>
+                        </li>
+                        <li><a class="ajax-link" href="<?=site_url('admin/topseller_controller/finishingbooks');?>"><i class="glyphicon glyphicon-eye-open"></i><span> View Finishing Books</span></a>
+                        </li>
                          <li><a class="ajax-link" href="<?=site_url('admin/book_detail/');?>"><i class="glyphicon glyphicon-plus"></i><span> Add BookDetail</span></a>
                         <li><a class="ajax-link" href="<?=site_url('admin/book_detail/viewdetail');?>"><i class="glyphicon glyphicon-eye-open"></i><span> View BookDetail</span></a>
                         </li>

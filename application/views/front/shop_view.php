@@ -107,10 +107,7 @@ _________________________________________________________ -->
 
                                                 <button type="submit" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i></button>
                                             </form>
-                                            <form action="<?=site_url('front/wishlist_controller/add');?>" method="POST" style="display: inline;">
-                                                <input type="hidden" id="book_id" name="book_id" value="<?php echo $r->book_id;?>">
-                                            <button title="Add to wishlist" type="submit" class="btn btn-template-main" id="save"><span class="glyphicon glyphicon-heart"></span></button>
-                                            </form>
+                                            <!--  -->
                                         </p>
                                         </span>
                                     </div>

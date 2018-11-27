@@ -93,7 +93,7 @@ $this->load->view('admin/common/sidebar');
                             
                         <label>CATEGORY</label>
 
-                        <select class="form-control" placeholder="category" id="cat_id" name="category">  
+                        <select class="form-control" placeholder="category" id="cat_id" name="category" required>  
                         
                             <option value=""> Select a Category</option>
                             <?php
@@ -112,9 +112,9 @@ $this->load->view('admin/common/sidebar');
                     <div class="form-group">
                     
                         <label>SUB-CATEGORY</label>
-                        <select class="form-control" placeholder="subcategory" id="subcat_id" name="subcategory">  
+                        <select class="form-control" placeholder="subcategory" id="subcat_id" name="subcategory" required>  
                         
-                            <option value="0"> Select a Sub-Category</option>
+                            <option value="0" > Select a Sub-Category</option>
                             <?php
                                 $i=1;   
                                 foreach($subcategory as $s){
@@ -154,7 +154,7 @@ $this->load->view('admin/common/sidebar');
                     </div>
                      <div class="form-group">
                         <label for="exampleInputEmail1">Price:</label>
-                        <input type="text" class="form-control" name="price" id="price" value="<?php echo $records->price;?>" required>
+                        <input type="text" class="form-control" name="price" id="price" value="<?php echo $records->actual_price;?>" required>
                     </div>
                    
                     <input type="hidden" name="book_id" value="<?php echo $records->book_id;?>">

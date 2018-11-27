@@ -1,4 +1,4 @@
-<?php
+ <?php
     $this->load->view('front/header');
 ?>
 
@@ -46,7 +46,7 @@ _________________________________________________________ -->
                     </div>
                     <div class="col-md-5">
                         <ul class="breadcrumb">
-                            <li><a href="http://localhost/interface-bookstore/front/shop_controller/view">Home</a>
+                            <li><a href="index.html">Home</a>
                             </li>
                             <li>New account / Sign in</li>
                         </ul>
@@ -65,12 +65,12 @@ _________________________________________________________ -->
                             <h2 class="text-uppercase">New account</h2>
 
                             <p class="lead">Not our registered customer yet?</p>
-                            <p>By registering with us you can buy latest books in a minute!</p>
-                            
+                            <p>Register as either a customer or a retailer. By registering with us you can buy latest books in a minute!</p>
+                            <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a></p>
 
                             <hr>
 
-                            <form  id="register" onsubmit="return validForm()" action="<?=site_url('front/customer_controller/customer_register')?>" method="post" enctype="multipart/form-data">
+                            <form  id="register"  onsubmit="return validForm()"  action="<?=site_url('front/customer_controller/customer_register')?>" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="name-login">Name</label>
                                     <input type="text" class="form-control" name="fullname" id="fullname" required>
@@ -81,7 +81,7 @@ _________________________________________________________ -->
                                     </div> 
                                     <div class="form-group">
                                     <label for="name-login">Phone:</label>
-                                    <input type="number" class="form-control" name="phone" id="phone" required>
+                                    <input type="text" class="form-control" name="phone" id="phone" required>
                                     </div> 
                                     <div class="form-group">
                                     <label for="name-login">Image:</label>
@@ -105,10 +105,6 @@ _________________________________________________________ -->
                                 <!--   <div class="form-group">
                         <div class="g-recaptcha" data-sitekey="6LeHBWMUAAAAAI6E4vNdle8MRIZC80FynBElI61n"></div>
                     </div> -->
-                    <!-- <div class="alert alert-danger">
-                    <?php echo validation_errors();?>
-                </div> -->
-
                                     <input type="hidden" name="resetpassword" id="resetpassword" value="0">
                                      <div class="form-group">
                         <div id="example1" ></div>
@@ -183,28 +179,24 @@ _________________________________________________________ -->
     ?>
 
 
+
 <script type="text/javascript">
-     //javascript:alert(grecaptcha.getResponse(widgetId1));
-   /*  function verifyCallback(response)
-     {
-        if(response)
-        {
-            
-            $('#validcaptcha').val('valid');
-        }
-        else
-        {
-            $('#validcaptcha').val('invalid');
-        }
-     }*/
+    
      function validForm(){
         const pass = $('#password').val();
         const confirm_password = $('#confirm_password').val();
+        var regex = /^(?=.*[_$@.])(?=.*[^_$@.])[\w$@.]{8,15}$/ ;
         if(pass != confirm_password)
         {
             alert('confirm password must be same');
             return false;
         }
+
+        if(!regex.test(pass)){
+            alert("Password must be a combination of alphabets, numbers and special characters!");
+            return false;
+        }
+
         if(grecaptcha.getResponse(widgetId1))
         {
             //alert('valid');s
@@ -216,17 +208,7 @@ _________________________________________________________ -->
             return false;
         }
     }
-     /*$('#testbtn').click(function(){
-        if(grecaptcha.getResponse(widgetId1))
-        {
-            //alert('valid');s
-            $('#register').submit();
-        }
-        else
-        {
-            alert('Invalid Captcha');
-        }
-     });*/
+     
       var onloadCallback = function() {
         widgetId1 = grecaptcha.render('example1', {
           'sitekey' : '6LeHBWMUAAAAAI6E4vNdle8MRIZC80FynBElI61n',

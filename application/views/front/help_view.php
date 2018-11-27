@@ -70,7 +70,7 @@
                                 <p>You heard it! You don’t have to move an inch. Payment is made on delivery.</p>
 
                                 <h3>Are there any delivery charges?</h3>
-                                <p>Online Book Store will charge Rs.50 per kg on the order for inside ring-road. For deliveries outside ring-road, charges will vary according to the location.</p>
+                                <p>Interface Book Store will charge Rs.50 per kg on the order for inside ring-road. For deliveries outside ring-road, charges will vary according to the location.</p>
                                  </div>
                                 <h3>REFUNDS & RETURNS</h3>
                                 <div class="box" >
@@ -87,7 +87,7 @@
                           <p>Do not hesitate to contact us on “interfacebookstore@gmail.com” with any questions or concerns.</p>
 
                             </div>
-                            <p>Happy book shopping! ─ Team Online Book Store</p>
+                            <p>Happy book shopping! ─ Team Interface Book Store</p>
                         </div>
                        
                 </section>

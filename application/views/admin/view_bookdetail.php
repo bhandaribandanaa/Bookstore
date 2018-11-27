@@ -88,10 +88,11 @@ $this->load->view('admin/common/sidebar');
            <th>book author</th>
         <th>book publisher</th>
         <th>book stock</th>
-        <th>publication date</th>
-        <th>description</th>
+        <!-- <th>publication date</th> -->
+        <!-- <th>description</th> -->
         <th>image</th>
-        <th>price</th>   
+        <th>Marked price</th>  
+        <th>Actual price</th> 
 
         <th>Actions</th>
     </tr>
@@ -111,13 +112,14 @@ $this->load->view('admin/common/sidebar');
             <td><?php echo $r->book_author; ?></td>
             <td><?php echo $r->book_publisher?></td>
             <td><?php echo $r->book_stock; ?></td>
-            <td><?php echo $r->publication_date; ?></td>
-            <td><div style="width: 250px;
+            <!-- <td><?php echo $r->publication_date; ?></td> -->
+            <!-- <td><div style="width: 250px;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;"><?php echo $r->description; ?></div></td>
+  text-overflow: ellipsis;"><?php echo $r->description; ?></div></td> -->
             <td class="center"><?php $k= $r->image; ?><img src="<?php echo base_url().'/uploads/bookdetail/'.$k ?>" height="150" width="100"></td>
             <td><?php echo $r->price; ?></td>
+            <td><?php echo $r->actual_price; ?></td>
             <td class="center">
             <a class="btn btn-info" href="editdetail/?book_id=<?php echo $r->book_id;?>">
                 <i class="glyphicon glyphicon-edit icon-white"></i>

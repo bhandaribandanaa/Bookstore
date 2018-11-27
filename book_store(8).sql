@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 25, 2018 at 11:42 AM
+-- Generation Time: Jul 28, 2018 at 04:27 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -89,8 +89,8 @@ CREATE TABLE `book_detail` (
 --
 
 INSERT INTO `book_detail` (`book_id`, `isbn`, `book_title`, `cat_id`, `subcat_id`, `book_author`, `book_publisher`, `book_stock`, `publication_date`, `description`, `image`, `price`) VALUES
-(2, '0099477467', 'BRAVE NEW WORLD', 1, 1, 'ALDOUS HUXLEY', 'Vintage Books USA', '240', '2018-07-04 00:00:00', 'Far in the future, the World Controllers have created the ideal society. Through clever use of genetic engineering, brainwashing and recreational sex and drugs all its members are happy consumers. Bernard Marx seems alone in feeling discontent. Harbouring an unnatural desire for solitude, and a perverse distaste for the pleasures of compulsory promiscuity, Bernard has an ill-defined longing to break free. A visit to one of the few remaining Savage Reservations where the old, imperfect life still continues, may be the cure for his distress-Huxley\'s ingenious fantasy of the future sheds a blazing light on the present and is considered to be his most enduring masterpiece.', 'JTbor6A6JKlbnk1AhAvs3.jpg', 576),
-(3, '0735224293', 'Little Fires Everywhere', 1, 3, 'Celeste Ng', 'Penguin Press', '132', '2017-09-17 00:00:00', 'In Shaker Heights, a placid, progressive suburb of Cleveland, everything is meticulously planned – from the layout of the winding roads, to the colours of the houses, to the successful lives its residents will go on to lead. And no one embodies this spirit more than Elena Richardson, whose guiding principle is playing by the rules.  Enter Mia Warren – an enigmatic artist and single mother – who arrives in this idyllic bubble with her teenage daughter Pearl, and rents a house from the Richardsons. Soon Mia and Pearl become more than just tenants: all four Richardson children are drawn to the alluring mother-daughter pair. But Mia carries with her a mysterious past, and a disregard for the rules that threatens to upend this carefully ordered community.  When the Richardsons\' friends attempt to adopt a Chinese-American baby, a custody battle erupts that dramatically divides the town and puts Mia and Mrs. Richardson on opposing sides. Suspicious of Mia and her motives, Mrs. Richardson becomes determined to uncover the secrets in Mia\'s past. But her obsession will come at unexpected and devastating costs to her own family – and Mia\'s.  Little Fires Everywhere explores the weight of long-held secrets and the ferocious pull of motherhood-and the danger of believing that planning and following the rules can avert disaster, or heartbreak.', '342732361.jpg', 600),
+(2, '00994774675', 'BRAVE NEW WORLD', 1, 1, 'ALDOUS HUXLEY', 'Vintage Books USA', '240', '2011-07-07 00:00:00', 'Far in the future, the World Controllers have created the ideal society. Through clever use of genetic engineering, brainwashing and recreational sex and drugs all its members are happy consumers. Bernard Marx seems alone in feeling discontent. Harbouring an unnatural desire for solitude, and a perverse distaste for the pleasures of compulsory promiscuity, Bernard has an ill-defined longing to break free. A visit to one of the few remaining Savage Reservations where the old, imperfect life still continues, may be the cure for his distress-Huxley\'s ingenious fantasy of the future sheds a blazing light on the present and is considered to be his most enduring masterpiece.', 'JTbor6A6JKlbnk1AhAvs31.jpg', 578),
+(3, '0735224293', 'Little Fires Everywhere', 1, 3, 'Celeste Ng', 'Penguin Press', '129', '2017-09-17 00:00:00', 'In Shaker Heights, a placid, progressive suburb of Cleveland, everything is meticulously planned – from the layout of the winding roads, to the colours of the houses, to the successful lives its residents will go on to lead. And no one embodies this spirit more than Elena Richardson, whose guiding principle is playing by the rules.  Enter Mia Warren – an enigmatic artist and single mother – who arrives in this idyllic bubble with her teenage daughter Pearl, and rents a house from the Richardsons. Soon Mia and Pearl become more than just tenants: all four Richardson children are drawn to the alluring mother-daughter pair. But Mia carries with her a mysterious past, and a disregard for the rules that threatens to upend this carefully ordered community.  When the Richardsons\' friends attempt to adopt a Chinese-American baby, a custody battle erupts that dramatically divides the town and puts Mia and Mrs. Richardson on opposing sides. Suspicious of Mia and her motives, Mrs. Richardson becomes determined to uncover the secrets in Mia\'s past. But her obsession will come at unexpected and devastating costs to her own family – and Mia\'s.  Little Fires Everywhere explores the weight of long-held secrets and the ferocious pull of motherhood-and the danger of believing that planning and following the rules can avert disaster, or heartbreak.', '342732361.jpg', 600),
 (4, '0385542232', 'Rich People Problems', 1, 1, 'Kevin Kwan', 'Doubleday', '139', '2017-05-23 00:00:00', 'When Nicholas Young hears that his grandmother, Su Yi, is on her deathbed, he rushes to be by her bedside--but he\'s not alone. It seems the entire Shang-Young clan has convened from all corners of the globe, ostensibly to care for their matriarch but truly to stake claim on the massive fortune that Su Yi controls.   With each family member secretly fantasizing about getting the keys to Tyersall Park--a trophy estate on 64 prime acres in the heart of Singapore--the place becomes a hotbed of intrigue and Nicholas finds himself blocked from entering the premises.   As relatives claw over heirlooms, Astrid Leong is at the center of her own storm, desperately in love with her old sweetheart Charlie Wu, but tormented by his ex-wife--a woman hell bent on destroying Astrid\'s reputation and relationship. Meanwhile Kitty Pong, married to billionaire Jack Bing, finds a formidable opponent in his fashionista daughter, Colette.', '29864343.jpg', 540),
 (5, '1449486797', 'The Sun and Her Flowers', 2, 4, 'Rupi Kaur', 'Andrews McMeel Publishing', '22', '2017-11-03 00:00:00', 'From Rupi Kaur, the #1 New York Times bestselling author of milk and honey, comes her long-awaited second collection of poetry. A vibrant and transcendent journey about growth and healing. Ancestry and honoring one’s roots. Expatriation and rising up to find a home within yourself.  Divided into five chapters and illustrated by Kaur, the sun and her flowers is a journey of wilting, falling, rooting, rising, and blooming. A celebration of love in all its forms.', '35606560.jpg', 365),
 (6, '1423160932', 'The Ship of the Dead (Magnus Chase and the Gods of Asgard #3)', 1, 5, 'Rick Riordan', 'Disney-Hyperion', '108', '2017-10-03 00:00:00', 'Magnus Chase, a once-homeless teen, is a resident of the Hotel Valhalla and one of Odin\'s chosen warriors. As the son of Frey, the god of summer, fertility, and health, Magnus isn\'t naturally inclined to fighting. But he has strong and steadfast friends, including Hearthstone the elf, Blitzen the dwarf, and Samirah the Valkyrie, and together they have achieved brave deeds, such as defeating Fenris Wolf and battling giants for Thor\'s hammer, Mjolnir. Now Magnus and his crew must sail to the farthest borders of Jotunheim and Niflheim in pursuit of Asgard\'s greatest threat. Will they succeed in their perilous journey, or is Ragnarok lurking on the horizon?', '28006120.jpg', 470),
@@ -131,9 +131,10 @@ CREATE TABLE `book_order` (
 --
 
 INSERT INTO `book_order` (`or_id`, `book_id`, `quantity`, `total_amount`, `cus_id`, `status`, `method`) VALUES
-(1, 4, 1, 540, 13, 'In Progress', ''),
+(1, 4, 1, 540, 13, 'Canceled', ''),
 (2, 5, 1, 365, 13, 'Canceled', ''),
-(3, 3, 2, 1200, 13, 'Canceled', '');
+(3, 3, 2, 1200, 13, 'Canceled', ''),
+(4, 3, 3, 1800, 16, 'Canceled', 'Cash On Delivery');
 
 -- --------------------------------------------------------
 
@@ -191,8 +192,10 @@ CREATE TABLE `customer` (
 INSERT INTO `customer` (`id`, `fullname`, `address`, `phone`, `username`, `password`, `image`, `email`, `status`, `resetpassword`, `token`) VALUES
 (13, 'Arya', 'Kathmandu', 2147483647, 'aarya', '827ccb0eea8a706c4c34a16891f84e7b', 'eli3.jpg', 'aarya.kshetri@apexcollege.edu.np', 0, 0, 68604),
 (14, 'Anubhav Pokhrel', 'Dhumbarahi', 2147483647, 'anubhav01', '827ccb0eea8a706c4c34a16891f84e7b', 'user_male2-512.png', 'anubhav.pokhrel8@gmail.com', 0, 0, 30209),
-(15, 'Aayush Karki', 'Dhumbarahi', 129831093, 'aayush', '35f1559ac5463e7bcf2490dafdb0531c', 'user_male2-5122.png', 'aarya_kshetri@outlook.com', 0, 0, 24927),
-(16, 'bandana', 'ktm', 2147483647, 'bandana', '827ccb0eea8a706c4c34a16891f84e7b', 'applejack_wallpaper_by_dastuke-d4w9sja1.png', 'bhandari.bandana@gmail.com', 0, 0, 88478);
+(16, 'bandana', 'ktm', 2147483647, 'bandana', '827ccb0eea8a706c4c34a16891f84e7b', 'applejack_wallpaper_by_dastuke-d4w9sja1.png', 'bhandari.bandana@gmail.com', 1, 0, 88478),
+(17, 'sajja', 'ktm', 2147483647, 'sajja', '827ccb0eea8a706c4c34a16891f84e7b', 'applejack_wallpaper_by_dastuke-d4w9sja6.png', 'sajja.shakya@apexcollege.edu.np', 0, 0, 65047),
+(18, 'sankita', 'ktm', 2147483647, 'sankita', '827ccb0eea8a706c4c34a16891f84e7b', 'applejack_wallpaper_by_dastuke-d4w9sja7.png', 'sankita.sigdel@apexcollege.edu.np', 0, 0, 16434),
+(19, 'nikita', 'ktm', 2147483647, 'nikita', '56bf377cae026633fe10d7401f40dbb4', 'applejack_wallpaper_by_dastuke-d4w9sja11.png', 'bandana.bhandari@apexcollege.edu.np', 0, 0, 12851);
 
 -- --------------------------------------------------------
 
@@ -261,7 +264,9 @@ INSERT INTO `review` (`review_id`, `rate`, `title`, `comment`, `book_id`, `custo
 (22, 2, 'Its ok', 'Okay book', 4, 13),
 (28, 2, 'bookstore', '12345', 10, 13),
 (31, 5, 'ok', 'ok', 10, 14),
-(32, 3, 'hdakhsdkajd', 'sadjdsjdh', 3, 16);
+(32, 3, 'hdakhsdkajd', 'sadjdsjdh', 3, 16),
+(34, 4, 'good ', 'very good', 11, 16),
+(35, 3, 'JHXkuasjgfsdgjfsdgfsdjjsdgfkusdgfjsdbvjhgsddd', 'cnssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssddsfhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh', 9, 16);
 
 -- --------------------------------------------------------
 
@@ -329,15 +334,11 @@ INSERT INTO `wishlist` (`w_id`, `cus_id`, `status`, `book_id`) VALUES
 (12, 14, 0, 5),
 (13, 14, 0, 3),
 (14, 14, 0, 7),
-(18, 15, 0, 11),
 (19, 16, 0, 2),
-(20, 16, 0, 9),
-(21, 16, 0, 7),
-(22, 16, 0, 3),
 (23, 16, 0, 4),
 (24, 16, 0, 6),
-(25, 16, 0, 11),
-(26, 16, 0, 5);
+(26, 16, 0, 5),
+(27, 16, 0, 8);
 
 --
 -- Indexes for dumped tables
@@ -461,7 +462,7 @@ ALTER TABLE `book_detail`
 -- AUTO_INCREMENT for table `book_order`
 --
 ALTER TABLE `book_order`
-  MODIFY `or_id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `or_id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `book_subcategory`
@@ -473,7 +474,7 @@ ALTER TABLE `book_subcategory`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `customer_order`
@@ -485,13 +486,13 @@ ALTER TABLE `customer_order`
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `wishlist`
 --
 ALTER TABLE `wishlist`
-  MODIFY `w_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `w_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- Constraints for dumped tables

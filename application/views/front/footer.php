@@ -4,7 +4,7 @@
                 <div class="col-md-3">
                     <div>
                     <h4><a href="<?=site_url('front/about_controller')?>">About Us</a></h4>
-                    <p style="text-align: justify;">Online Book Store is a web application which is mainly concentrated on systematizing today’s current long and manual process of buying books by using computerized web system. The Online Books Store is a website that facilitates access to books of various categories over the Internet. It also aims to....</p>
+                    <p style="text-align: justify;">Interface Book Store is a web application which is mainly concentrated on systematizing today’s current long and manual process of buying books by using computerized web system. The Interface Books Store is a website that facilitates access to books of various categories over the Internet. It also aims to....</p>
                     <p><a href="<?=site_url('front/about_controller')?>">Read More>></a></p>
                 </div>
            </div>
@@ -13,7 +13,7 @@
                  <div>
                     <h4><a href="<?=site_url('front/about_controller')?>">Contact Info</a></h4>
                 <address>
-                    <p>Online Book Store Pvt. Ltd.<br>
+                    <p>Interface Book Store Pvt. Ltd.<br>
                         <span style="line-height:1.6em;">
                             Kathmandu,<br>
                             Nepal&nbsp;<br>

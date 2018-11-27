@@ -66,7 +66,7 @@ $this->load->view('admin/common/sidebar');
     <div class="box col-md-12">
     <div class="box-inner">
     <div class="box-header well" data-original-title="">
-        <h2><i class="glyphicon glyphicon-user"></i> View customer/retailer</h2>
+        <h2><i class="glyphicon glyphicon-user"></i> View customer</h2>
 
         <div class="box-icon">
             <a href="#" class="btn btn-setting btn-round btn-default"><i class="glyphicon glyphicon-cog"></i></a>
@@ -76,7 +76,7 @@ $this->load->view('admin/common/sidebar');
         </div>
     </div>
     <div class="box-content">
-    <div class="alert alert-info">Showing the List of customer/retailer<a href="" target="_blank"></a></div>
+    <div class="alert alert-info">Showing the List of customer<a href="" target="_blank"></a></div>
      <table class="table table-striped table-bordered bootstrap-datatable datatable responsive" id='datatable'>
     <thead>
     <tr>
@@ -85,11 +85,9 @@ $this->load->view('admin/common/sidebar');
         <th>Address </th>
         <th>Phone </th>
         <th>Username</th>
-        <th>Password </th>
         <th>Email</th>
         <th>Status</th>
         <th>Image</th>
-        <th>Action</th>
     </tr>
     </thead>
     <tbody>
@@ -103,7 +101,7 @@ $this->load->view('admin/common/sidebar');
         <td class="center"><?php echo $r->address;?></td>
         <td class="center"><?php echo $r->phone;?></td>
         <td class="center"><?php echo $r->username;?></td>
-        <td class="center"><?php echo $r->password;?></td>
+        <!-- <td class="center"><?php echo $r->password;?></td> -->
         <td class="center"><?php echo $r->email;?></td>
         <td class="center"><?php if($r->status == 0){
             echo "Not Verified";
@@ -113,7 +111,7 @@ $this->load->view('admin/common/sidebar');
         ?></td>
         <td class="center"><?php $k= $r->image; ?><img src="<?php echo base_url().'/uploads/custretailer/'.$k ?>" height="200" width="250"></td>
             
-        <td class="center">
+        <!-- <td class="center">
             <a class="btn btn-info" href="edituser/?id=<?php echo $r->id;?>">
                 <i class="glyphicon glyphicon-edit icon-white"></i>
                 Edit
@@ -122,7 +120,7 @@ $this->load->view('admin/common/sidebar');
                 <i class="glyphicon glyphicon-trash icon-white"></i>
                 Delete
             </a>
-        </td>
+        </td> -->
     <?php
     $i++;
 }

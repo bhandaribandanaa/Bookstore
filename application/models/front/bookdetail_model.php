@@ -18,7 +18,14 @@ class Bookdetail_model extends CI_Model {
         $query=$this->db->get('review r');
         return $query->result();
 	}
+	public function average_rate($id){
+		$data = $this->db->query("SELECT ROUND(AVG(rate)) as rate FROM `review` WHERE book_id =".$id);
 
+		$query = $data->row()->rate;
+		return $query;
+
+
+}
 }
 
 /* End of file bookdetail_model.php */
